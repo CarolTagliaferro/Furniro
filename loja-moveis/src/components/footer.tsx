@@ -114,10 +114,13 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter Your Email Address"
-              className="border-b border-black outline-none pr-2 lg:pr-5 lg:mr-3 pb-1 pt-2 lg:pt-5"
+              className="border-b border-font outline-none pr-2 lg:pr-5 lg:mr-3 pb-1 pt-2 lg:pt-5"
             />
-            <button className="font-poppins font-bold text-sm lg:text-base px-1 border-b border-black hover:bg-gray-200 transition-all">
-              SUBSCRIBE
+            <button className="font-poppins font-bold border-b border-font text-sm lg:text-base px-3 py-1 relative group overflow-hidden transition-all">
+              <span className="relative z-10 transition-colors group-hover:text-white">
+                SUBSCRIBE
+              </span>
+              <span className="absolute left-0 bottom-0 w-full h-0 transition-all bg-grayOne z-0 group-hover:h-full"></span>
             </button>
           </div>
         </div>

@@ -15,21 +15,24 @@ const SecondSection = () => {
         <div>
           <img
             src="https://furniro-at.s3.amazonaws.com/HomeImages/Mask+Group.png"
-            alt=""
+            alt="Mesa com fundo branco"
+            className={Classes.HoverImg}
           />
           <p className={Classes.SubTitleHome}>Dining</p>
         </div>
         <div>
           <img
             src="https://furniro-at.s3.amazonaws.com/HomeImages/Image-living+room.png"
-            alt=""
+            alt="Sofá com decorações"
+            className={Classes.HoverImg}
           />
           <p className={Classes.SubTitleHome}>Living</p>
         </div>
         <div>
           <img
             src="https://furniro-at.s3.amazonaws.com/HomeImages/Mask+Group+(1).png"
-            alt=""
+            alt="Almofada e vaso de plantas"
+            className={Classes.HoverImg}
           />
           <p className={Classes.SubTitleHome}>Bedroom</p>
         </div>

@@ -1,25 +1,9 @@
-import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import CartOverlay from "./CartOverlay";
+import React from "react";
+import { NavLink } from "react-router-dom";
+
 import { Classes } from "../utils/tailwindPredefs";
 
 const Header: React.FC = () => {
-  const [isCartOverlayVisible, setIsCartOverlayVisible] = useState(false);
-  const navigate = useNavigate();
-
-  const handleCartClick = () => {
-    setIsCartOverlayVisible(true);
-  };
-
-  const handleCartClose = () => {
-    setIsCartOverlayVisible(false);
-  };
-
-  const handleCartRedirect = () => {
-    navigate("/cart");
-    setIsCartOverlayVisible(false);
-  };
-
   return (
     <header className="bg-white">
       <nav className="flex items-center justify-between p-5">
@@ -75,17 +59,14 @@ const Header: React.FC = () => {
             src="https://furniro-at.s3.amazonaws.com/Icons/login.png"
             alt="Icone login"
             className="w-full h-full cursor-pointer"
-            onClick={() => navigate("/login")}
           />
           <img
             src="https://furniro-at.s3.amazonaws.com/Icons/shopping-cart.png"
             alt="Carrinho compras"
             className="w-full h-full cursor-pointer"
-            onClick={handleCartClick}
           />
         </div>
       </nav>
-      <CartOverlay isVisible={isCartOverlayVisible} onClose={handleCartClose} />
     </header>
   );
 };

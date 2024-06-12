@@ -1,0 +1,59 @@
+[
+    {
+      "id": 1,
+      "name": "Slytherine",
+      "price": "2.500.000",
+      "description": "Stylish cafe chair",
+      "image": "https://furniro-at.s3.amazonaws.com/Products/slytherine.png"
+    },
+    {
+      "id": 2,
+      "name": "Leviosa",
+      "price": "2.500.000",
+      "description": "Stylish cafe chair",
+      "image": "https://furniro-at.s3.amazonaws.com/Products/leviosa.png"
+    },
+    {
+      "id": 3,
+      "name": "Lolito",
+      "price": "7.000.000",
+      "description": "Luxury big sofa",
+      "image": "https://furniro-at.s3.amazonaws.com/Products/lolito.png"
+    },
+    {
+        "id": 4,
+        "name": "Respira",
+        "price": "500.000",
+        "description": "Outdoor bar table and stool",
+        "image": "https://furniro-at.s3.amazonaws.com/Products/respira.png"
+      },
+      {
+        "id": 5,
+        "name": "Grifo",
+        "price": "1.500.000",
+        "description": "Night lamp",
+        "image": "https://furniro-at.s3.amazonaws.com/Products/Images+(3).png"
+      },
+      {
+        "id": 6,
+        "name": "Muggo",
+        "price": "150.000",
+        "description": "Small mug",
+        "image": "https://furniro-at.s3.amazonaws.com/Products/image+6.png"
+      },
+      {
+        "id": 7,
+        "name": "Pingky",
+        "price": "7.000.000",
+        "description": "Cute bed set",
+        "image": "https://furniro-at.s3.amazonaws.com/Products/Images+(4).png"
+      },
+      {
+        "id": 8,
+        "name": "Potty",
+        "price": "500.000",
+        "description": "Minimalist flower pot",
+        "image": "https://furniro-at.s3.amazonaws.com/Products/Images+(5).png"
+      }
+  ]
+  
