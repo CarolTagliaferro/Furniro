@@ -53,9 +53,12 @@ const Header: React.FC = () => {
               </NavLink>
             </li>
             <li>
-              <a href="" className={Classes.Links}>
+              <NavLink
+                to={"/loja-moveis/src/components/errorPage.tsx"}
+                className={Classes.Links}
+              >
                 About
-              </a>
+              </NavLink>
             </li>
             <li>
               <NavLink
