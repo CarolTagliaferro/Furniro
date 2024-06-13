@@ -52,10 +52,11 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="flex flex-col lg:pl-32">
+
+        <div className="lg:pl-32">
           <div>
             <h2 className={Classes.FtTextLight}>Links</h2>
-            <ul className="flex flex-col gap-4 lg:gap-8">
+            <ul className="flex flex-col gap-2 lg:gap-8">
               <NavLink
                 to={"/loja-moveis/src/pages/Home/home.tsx"}
                 className={Classes.FtTextDark}
@@ -84,9 +85,9 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <div className="flex flex-col lg:pl-10">
+          <div className="lg:pl-10">
             <h2 className={Classes.FtTextLight}>Help</h2>
-            <ul className="flex flex-col gap-4 lg:gap-8">
+            <ul className="flex flex-col gap-2 lg:gap-8">
               <NavLink
                 to={"/loja-moveis/src/components/errorPage.tsx"}
                 className={Classes.FtTextDark}
@@ -108,7 +109,8 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="pt-2 lg:pt-0">
+
+        <div className="pt-2  lg:pt-0">
           <h2 className={Classes.FtTextLight}>Newsletter</h2>
           <div className="flex  gap-4 pt-2 lg:pt-0">
             <input
@@ -120,10 +122,11 @@ const Footer = () => {
               <span className="relative z-10 transition-colors group-hover:text-white">
                 SUBSCRIBE
               </span>
-              <span className="absolute left-0 bottom-0 w-full h-0 transition-all bg-grayOne z-0 group-hover:h-full"></span>
+              <span className="absolute left-0 bottom-0 w-full h-0 transition-all bg-font z-0 group-hover:h-full"></span>
             </button>
           </div>
         </div>
+
         <div className="border-t border-grayLight col-span-4 col-start-1">
           <p className="font-poppins text-center lg:text-start pt-4 lg:pt-8">
             2023 furniro. All rights reserved

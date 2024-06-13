@@ -14,7 +14,16 @@ export const Classes = {
     "font-poppins font-bold text-sm lg:text-lg hover:text-primary transition-all pt-5",
   SubTitleHome:
     "text-center font-poppins font-bold text-md lg:text-lg text-font pt-3 lg:pt-5",
-  HoverImg: "transition-all duration-300 hover:scale-95",
+  HoverImg: "lg:transition-all lg:duration-300 lg:hover:scale-95",
+
+  //Contact
+  textFormH2: "text-xl font-bold",
+  textFormP: "text-sm  pt-1",
+  alignIconText: "flex items-start",
+  formContactPosition: "flex flex-col",
+  formInputs:
+    "text-xs pt-2 border border-grayOne outline-none rounded-lg px-5 py-2",
+  formLabel: "text-sm font-semibold pb-4",
 };
 
 export default tailwindPredefs;
