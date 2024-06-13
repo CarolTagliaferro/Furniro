@@ -28,6 +28,11 @@ export const Classes = {
   //
   lsH1: "text-xl font-semibold tracking-wide",
   lsP: "text-grayThree font-medium  pt-1",
+
+  //Login
+  labelLogin: "block font-medium text-font mt-3",
+  inputLogin:
+    "w-full block h-12 border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm",
 };
 
 export default tailwindPredefs;
