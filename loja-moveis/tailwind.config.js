@@ -19,7 +19,8 @@ export default {
         grayOne: "#9F9F9F", 
         grayTwo: "#666666", 
         grayThree: "#898989", 
-        grayFour: "#B0B0B0" 
+        grayFour: "#B0B0B0",
+        whiteLinen:"#faf3ea"
       },
       fontFamily:{
         montserrat:['Montserrat', 'sans-serif'],

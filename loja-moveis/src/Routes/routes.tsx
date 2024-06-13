@@ -5,11 +5,14 @@ import Contact from "../pages/Contact/contact";
 import Cart from "../pages/Cart/cart";
 import Login from "../pages/Login/login";
 
+import ErrorPage from "../components/errorPage";
+
 function Router() {
   return (
     <Routes>
       <Route path="/loja-moveis/src/pages/Home/home.tsx" element={<Home />} />
       <Route path="/loja-moveis/src/pages/Shop/shop.tsx" element={<Shop />} />
+
       <Route
         path="/loja-moveis/src/pages/Contact/contact.tsx"
         element={<Contact />}
@@ -18,6 +21,10 @@ function Router() {
       <Route
         path="/loja-moveis/src/pages/Login/login.tsx"
         element={<Login />}
+      />
+      <Route
+        path="/loja-moveis/src/components/errorPage.tsx"
+        element={<ErrorPage />}
       />
     </Routes>
   );

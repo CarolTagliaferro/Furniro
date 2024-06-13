@@ -5,7 +5,7 @@ import { Classes } from "../../../utils/tailwindPredefs";
 
 const Form = () => {
   return (
-    <div>
+    <div className="pb-16">
       <div className="text-center lg:pb-24 lg:pt-24 font-poppins ">
         <h1 className="font-bold text-3xl pb-3">Get In Touch With Us</h1>
         <p className="text-grayOne">

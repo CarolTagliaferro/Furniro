@@ -24,6 +24,8 @@ export const Classes = {
   formInputs:
     "text-xs pt-2 border border-grayOne outline-none rounded-lg px-5 py-2",
   formLabel: "text-sm font-semibold pb-4",
+  lsH1: "text-xl font-bold tracking-wide",
+  lsP: "text-grayThree font-medium  pt-1",
 };
 
 export default tailwindPredefs;
