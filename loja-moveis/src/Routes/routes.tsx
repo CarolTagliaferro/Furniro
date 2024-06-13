@@ -4,7 +4,6 @@ import Shop from "../pages/Shop/shop";
 import Contact from "../pages/Contact/contact";
 import Cart from "../pages/Cart/cart";
 import Login from "../pages/Login/login";
-
 import ErrorPage from "../components/errorPage";
 
 function Router() {

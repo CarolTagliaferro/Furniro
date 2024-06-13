@@ -26,7 +26,7 @@ const Header: React.FC = () => {
           </div>
         </NavLink>
         <div className="hidden md:flex flex-grow justify-center font-poppins font-medium">
-          <ul className="flex space-x-10">
+          <ul className="flex space-x-20">
             <li>
               <NavLink
                 to="/loja-moveis/src/pages/Home/home.tsx"
@@ -61,16 +61,18 @@ const Header: React.FC = () => {
             </li>
           </ul>
         </div>
-        <div className="hidden md:flex items-center space-x-4 pr-4">
-          <img
-            src="https://furniro-at.s3.amazonaws.com/Icons/login.png"
-            alt="Icone login"
-            className="lg:w-full lg:h-full cursor-pointer"
-          />
+        <div className="hidden md:flex items-center lg:space-x-8 pr-14">
+          <NavLink to="/loja-moveis/src/pages/Login/login.tsx">
+            <img
+              src="https://furniro-at.s3.amazonaws.com/Icons/login.png"
+              alt="Icone login"
+              className="lg:w-7 lg:h-5 cursor-pointer"
+            />
+          </NavLink>
           <img
             src="https://furniro-at.s3.amazonaws.com/Icons/shopping-cart.png"
             alt="Carrinho compras"
-            className="lg:w-full lg:h-full cursor-pointer"
+            className="lg:w-8 lg:h-6 cursor-pointer"
           />
         </div>
         <div className="md:hidden flex items-center">
@@ -88,7 +90,7 @@ const Header: React.FC = () => {
       </nav>
       {/* Menu burger*/}
       <div
-        className={`fixed top-0 right-0 h-2/5 w-2/5 bg-mediumBg shadow-md z-50 rounded-md transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-2/5 w-2/4 bg-mediumBg shadow-md z-50 rounded-md transform transition-transform duration-300 ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

@@ -1,6 +1,6 @@
-import { Classes } from "../../../utils/tailwindPredefs";
+import { Classes } from "../utils/tailwindPredefs";
 
-const LastSection = () => {
+const Qualities = () => {
   return (
     <div className="pb-10">
       <div className="flex font-poppins bg-whiteLinen lg:py-20  gap-40 justify-evenly">
@@ -49,4 +49,4 @@ const LastSection = () => {
   );
 };
 
-export default LastSection;
+export default Qualities;

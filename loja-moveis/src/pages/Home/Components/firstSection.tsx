@@ -18,7 +18,7 @@ const FirstSection = () => {
               Discouver Our <br />
               New Collection
             </h2>
-            <p className="font-poppins text-font text-sm lg:text-base font-bold pb-5 lg:pb-10">
+            <p className="font-poppins text-font text-sm lg:text-base font-medium pb-5 lg:pb-10">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
               <br /> elit tellus, luctus nec ullamcorper mattis.
             </p>

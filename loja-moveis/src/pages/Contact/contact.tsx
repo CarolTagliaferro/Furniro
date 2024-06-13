@@ -1,12 +1,12 @@
 import React from "react";
 import Form from "./components/form";
-import LastSection from "./components/lastSection";
+import Qualities from "../../components/qualities";
 
 const Contact: React.FC = () => {
   return (
     <div>
       <Form />
-      <LastSection />
+      <Qualities />
     </div>
   );
 };

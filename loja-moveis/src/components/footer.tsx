@@ -13,11 +13,11 @@ const Footer = () => {
       <div className="flex flex-col lg:grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
           <NavLink to={"/loja-moveis/src/pages/Home/home.tsx"}>
-            <h1 className="font-black font-poppins text-3xl pt-5 pb-5">
+            <h1 className="font-bold font-poppins text-3xl pt-5 pb-5">
               Furniro.
             </h1>
           </NavLink>
-          <p className={Classes.FtTextLight}>
+          <p className="text-grayOne font-poppins text-base lg:text-lg lg:pt-5 lg:pb-5">
             400 University Drive Suite 200 Coral <br /> Gables, <br /> FL 33134
             USA
           </p>
@@ -112,13 +112,13 @@ const Footer = () => {
 
         <div className="pt-2  lg:pt-0">
           <h2 className={Classes.FtTextLight}>Newsletter</h2>
-          <div className="flex  gap-4 pt-2 lg:pt-0">
+          <div className="lg:flex gap-4 pt-2 lg:pt-0">
             <input
               type="email"
               placeholder="Enter Your Email Address"
               className="border-b border-font outline-none pr-2 lg:pr-5 lg:mr-3 pb-1 pt-2 lg:pt-5"
             />
-            <button className="font-poppins font-bold border-b border-font text-sm lg:text-base px-3 py-1 relative group overflow-hidden transition-all">
+            <button className="font-poppins mt-2 font-medium border-b border-font text-sm lg:text-base px-3 py-1 relative group overflow-hidden transition-all">
               <span className="relative z-10 transition-colors group-hover:text-white">
                 SUBSCRIBE
               </span>
