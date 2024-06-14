@@ -12,7 +12,7 @@ const Footer = () => {
     <footer className="bg-white px-10 py-5 lg:px-20 lg:py-10 border-t-2 border-grayLight">
       <div className="flex flex-col lg:grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
-          <NavLink to={"/loja-moveis/src/pages/Home/home.tsx"}>
+          <NavLink to={"/"}>
             <h1 className="font-bold font-poppins text-3xl pt-5 pb-5">
               Furniro.
             </h1>
@@ -57,28 +57,16 @@ const Footer = () => {
           <div>
             <h2 className={Classes.FtTextLight}>Links</h2>
             <ul className="flex flex-col gap-2 lg:gap-8">
-              <NavLink
-                to={"/loja-moveis/src/pages/Home/home.tsx"}
-                className={Classes.FtTextDark}
-              >
+              <NavLink to={"/"} className={Classes.FtTextDark}>
                 Home
               </NavLink>
-              <NavLink
-                to={"/loja-moveis/src/pages/Shop/shop.tsx"}
-                className={Classes.FtTextDark}
-              >
+              <NavLink to={"/shop"} className={Classes.FtTextDark}>
                 Shop
               </NavLink>
-              <NavLink
-                to={"/loja-moveis/src/components/errorPage.tsx"}
-                className={Classes.FtTextDark}
-              >
+              <NavLink to={"/errorPage"} className={Classes.FtTextDark}>
                 About
               </NavLink>
-              <NavLink
-                to={"/loja-moveis/src/pages/Contact/contact.tsx"}
-                className={Classes.FtTextDark}
-              >
+              <NavLink to={"/contact"} className={Classes.FtTextDark}>
                 Contact
               </NavLink>
             </ul>
@@ -88,22 +76,13 @@ const Footer = () => {
           <div className="lg:pl-10">
             <h2 className={Classes.FtTextLight}>Help</h2>
             <ul className="flex flex-col gap-2 lg:gap-8">
-              <NavLink
-                to={"/loja-moveis/src/components/errorPage.tsx"}
-                className={Classes.FtTextDark}
-              >
+              <NavLink to={"/errorPage"} className={Classes.FtTextDark}>
                 Payment Options
               </NavLink>
-              <NavLink
-                to={"/loja-moveis/src/components/errorPage.tsx"}
-                className={Classes.FtTextDark}
-              >
+              <NavLink to={"/errorPage"} className={Classes.FtTextDark}>
                 Returns
               </NavLink>
-              <NavLink
-                to={"/loja-moveis/src/components/errorPage.tsx"}
-                className={Classes.FtTextDark}
-              >
+              <NavLink to={"/errorPage"} className={Classes.FtTextDark}>
                 Privacy Policies
               </NavLink>
             </ul>

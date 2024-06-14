@@ -9,22 +9,13 @@ import ErrorPage from "../components/errorPage";
 function Router() {
   return (
     <Routes>
-      <Route path="/loja-moveis/src/pages/Home/home.tsx" element={<Home />} />
-      <Route path="/loja-moveis/src/pages/Shop/shop.tsx" element={<Shop />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/shop" element={<Shop />} />
 
-      <Route
-        path="/loja-moveis/src/pages/Contact/contact.tsx"
-        element={<Contact />}
-      />
-      <Route path="/loja-moveis/src/pages/Cart/cart.tsx" element={<Cart />} />
-      <Route
-        path="/loja-moveis/src/pages/Login/login.tsx"
-        element={<Login />}
-      />
-      <Route
-        path="/loja-moveis/src/components/errorPage.tsx"
-        element={<ErrorPage />}
-      />
+      <Route path="contact" element={<Contact />} />
+      <Route path="cart" element={<Cart />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/errorPage" element={<ErrorPage />} />
     </Routes>
   );
 }

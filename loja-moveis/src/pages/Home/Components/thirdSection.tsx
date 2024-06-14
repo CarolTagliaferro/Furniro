@@ -24,7 +24,7 @@ const ThirdSection: React.FC = () => {
         ))}
       </div>
       <div className="text-center mt-8">
-        <NavLink to={"/loja-moveis/src/pages/Shop/shop.tsx"}>
+        <NavLink to={"/shop"}>
           <button className="font-semibold text-primary border border-primary py-2 px-16 hover:bg-primary hover:text-white transition-all">
             Show More
           </button>

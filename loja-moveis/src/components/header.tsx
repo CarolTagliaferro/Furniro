@@ -13,7 +13,7 @@ const Header: React.FC = () => {
   return (
     <header className="bg-white">
       <nav className="flex items-center justify-between p-5">
-        <NavLink to="/loja-moveis/src/pages/Home/home.tsx">
+        <NavLink to="/">
           <div className="flex items-center">
             <img
               className="pl-1 lg:pl-4 w-10 lg:w-auto"
@@ -28,41 +28,29 @@ const Header: React.FC = () => {
         <div className="hidden md:flex flex-grow justify-center font-poppins font-medium">
           <ul className="flex space-x-20">
             <li>
-              <NavLink
-                to="/loja-moveis/src/pages/Home/home.tsx"
-                className={Classes.Links}
-              >
+              <NavLink to="/" className={Classes.Links}>
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/loja-moveis/src/pages/Shop/shop.tsx"
-                className={Classes.Links}
-              >
+              <NavLink to="/shop" className={Classes.Links}>
                 Shop
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to={"/loja-moveis/src/components/errorPage.tsx"}
-                className={Classes.Links}
-              >
+              <NavLink to={"/errorPage"} className={Classes.Links}>
                 About
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/loja-moveis/src/pages/Contact/contact.tsx"
-                className={Classes.Links}
-              >
+              <NavLink to="/contact" className={Classes.Links}>
                 Contact
               </NavLink>
             </li>
           </ul>
         </div>
         <div className="hidden md:flex items-center lg:space-x-8 pr-14">
-          <NavLink to="/loja-moveis/src/pages/Login/login.tsx">
+          <NavLink to="/login">
             <img
               src="https://furniro-at.s3.amazonaws.com/Icons/login.png"
               alt="Icone login"
@@ -99,26 +87,18 @@ const Header: React.FC = () => {
         </button>
         <ul className="flex flex-col space-y-4 p-4 text-center">
           <li>
-            <NavLink
-              to="/loja-moveis/src/pages/Home/home.tsx"
-              className={Classes.Links}
-              onClick={toggleMenu}
-            >
+            <NavLink to="/home" className={Classes.Links} onClick={toggleMenu}>
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/loja-moveis/src/pages/Shop/shop.tsx"
-              className={Classes.Links}
-              onClick={toggleMenu}
-            >
+            <NavLink to="/shop" className={Classes.Links} onClick={toggleMenu}>
               Shop
             </NavLink>
           </li>
           <li>
             <NavLink
-              to={"/loja-moveis/src/components/errorPage.tsx"}
+              to={"/errorPage"}
               className={Classes.Links}
               onClick={toggleMenu}
             >
@@ -127,7 +107,7 @@ const Header: React.FC = () => {
           </li>
           <li>
             <NavLink
-              to="/loja-moveis/src/pages/Contact/contact.tsx"
+              to="/contact"
               className={Classes.Links}
               onClick={toggleMenu}
             >
@@ -135,11 +115,13 @@ const Header: React.FC = () => {
             </NavLink>
           </li>
           <li className="flex gap-2 justify-center ">
-            <img
-              src="https://furniro-at.s3.amazonaws.com/Icons/login.png"
-              alt="Icone login"
-              className="w-7 h-6"
-            />
+            <NavLink to={"/login"}>
+              <img
+                src="https://furniro-at.s3.amazonaws.com/Icons/login.png"
+                alt="Icone login"
+                className="w-7 h-6"
+              />
+            </NavLink>
             <img
               src="https://furniro-at.s3.amazonaws.com/Icons/shopping-cart.png"
               alt="Carrinho compras"
