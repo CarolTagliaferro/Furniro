@@ -6,7 +6,7 @@ import ProductsShop from "./components/productsShop";
 const Shop: React.FC = () => {
   return (
     <div>
-      <Banner />
+      <Banner name="Shop" />
       <ProductsShop />
       <Qualities />
     </div>

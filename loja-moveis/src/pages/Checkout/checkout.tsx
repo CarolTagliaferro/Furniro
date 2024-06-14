@@ -5,7 +5,7 @@ import Banner from "../../components/banner";
 const Checkout: React.FC = () => {
   return (
     <div>
-      <Banner />
+      <Banner name="Checkout" />
       <Qualities />
     </div>
   );

@@ -6,7 +6,7 @@ import Banner from "../../components/banner";
 const Contact: React.FC = () => {
   return (
     <div>
-      <Banner />
+      <Banner name="Contact" />
       <Form />
       <Qualities />
     </div>
