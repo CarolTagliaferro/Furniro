@@ -10,6 +10,7 @@ export default {
         primary: "#B88e2f",
         primaryDark:"#a67528",
         font: "#333333",
+        textCard: "#3A3A3A",
         redAccents: "#E97171", 
         greenAccents: "#2ec1ac", 
         lightBg: "#F4F5F7", 

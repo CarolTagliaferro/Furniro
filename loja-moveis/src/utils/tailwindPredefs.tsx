@@ -15,6 +15,9 @@ export const Classes = {
   SubTitleHome:
     "text-center font-poppins font-semibold text-md lg:text-lg text-font pt-3 lg:pt-5",
   HoverImg: "lg:transition-all lg:duration-300 lg:hover:scale-95",
+  labelProduct:
+    "absolute top-2 right-2 rounded-full text-center pt-4 text-white text-sm h-12 w-12",
+  textIconProduct: "flex items-center gap-1 text-white font-semibold",
 
   //Contact
   textFormH2: "text-xl font-medium",
