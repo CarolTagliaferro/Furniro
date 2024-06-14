@@ -17,67 +17,71 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   };
 
   return (
-    <div
-      className={`bg-lightBg w-80 font-poppins relative ${
-        isHovered ? "brightness-50 transition-all" : ""
-      }`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <img
-        className="w-80 h-auto object-cover"
-        src={product.image}
-        alt={product.name}
-      />
-      {product.discount && (
-        <div className={`${Classes.labelProduct} bg-redAccents`}>
-          {product.percentage}
-        </div>
-      )}
-      {product.new && (
-        <div className={`${Classes.labelProduct} bg-greenAccents`}>New</div>
-      )}
-      {isHovered && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <div>
-            <button className="bg-white text-primary font-semibold px-14 py-3">
-              Add to Cart
-            </button>
+    <div>
+      <div
+        className={`bg-lightBg w-80 font-poppins relative ${
+          isHovered ? "brightness-50 transition-all" : ""
+        }`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <img
+          className="w-80 h-auto object-cover"
+          src={product.image}
+          alt={product.name}
+        />
+        {product.discount && (
+          <div className={`${Classes.labelProduct} bg-redAccents`}>
+            {product.percentage}
           </div>
-          <div className="flex gap-5 pt-5">
-            <div className={Classes.textIconProduct}>
-              <IoShareSocial className="w-5 h-5" />
-              <p>Share</p>
+        )}
+        {product.new && (
+          <div className={`${Classes.labelProduct} bg-greenAccents`}>New</div>
+        )}
+        {isHovered && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <div>
+              <button className="bg-white text-primary font-semibold px-14 py-3">
+                Add to Cart
+              </button>
             </div>
-            <div className={Classes.textIconProduct}>
-              <RiArrowLeftRightLine className="w-5 h-5" />
-              <p>Compare</p>
-            </div>
-            <div className={Classes.textIconProduct}>
-              <PiHeartBold className="w-5 h-5" />
-              <p>Like</p>
+            <div className="flex gap-5 pt-5">
+              <div className={Classes.textIconProduct}>
+                <IoShareSocial className="w-5 h-5" />
+                <p>Share</p>
+              </div>
+              <div className={Classes.textIconProduct}>
+                <RiArrowLeftRightLine className="w-5 h-5" />
+                <p>Compare</p>
+              </div>
+              <div className={Classes.textIconProduct}>
+                <PiHeartBold className="w-5 h-5" />
+                <p>Like</p>
+              </div>
             </div>
           </div>
-        </div>
-      )}
-      <div className="mt-4 px-3 pb-5">
-        <h2 className="text-2xl font-semibold text-gray-900">{product.name}</h2>
-        <p className="text-gray-600">{product.description}</p>
-        <div className="mt-2">
-          {product.discount ? (
-            <div className="flex items-center gap-6">
-              <span className="text-xl font-semibold text-gray-900">
+        )}
+        <div className="mt-4 px-3 pb-5">
+          <h2 className="text-2xl font-semibold text-gray-900">
+            {product.name}
+          </h2>
+          <p className="text-gray-600">{product.description}</p>
+          <div className="mt-2">
+            {product.discount ? (
+              <div className="flex items-center gap-6">
+                <span className="text-xl font-semibold text-gray-900">
+                  {product.price}
+                </span>
+                <span className="text-gray-400 line-through mr-2">
+                  {product.discount}
+                </span>
+              </div>
+            ) : (
+              <div className="text-xl font-semibold text-gray-900">
                 {product.price}
-              </span>
-              <span className="text-gray-400 line-through mr-2">
-                {product.discount}
-              </span>
-            </div>
-          ) : (
-            <div className="text-xl font-semibold text-gray-900">
-              {product.price}
-            </div>
-          )}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
