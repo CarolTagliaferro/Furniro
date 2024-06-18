@@ -4,7 +4,7 @@ import ProductCard from "../../../components/productCard";
 
 const ProductsShop: React.FC = () => {
   const { products, loading, error } = useFetchApi(
-    "https://run.mocky.io/v3/873398cf-3e91-4ad0-a195-2806b4b4eb94"
+    "http://localhost:3000/products"
   );
 
   if (loading) return <div>Loading...</div>;

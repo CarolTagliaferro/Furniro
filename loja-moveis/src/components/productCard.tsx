@@ -39,7 +39,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
           <div className={`${Classes.labelProduct} bg-greenAccents`}>New</div>
         )}
         {isHovered && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <div className="absolute inset-0 flex flex-col items-center justify-center brightness-100">
             <div>
               <button className="bg-white text-primary font-semibold px-14 py-3">
                 Add to Cart

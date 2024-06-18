@@ -57,11 +57,13 @@ const Header: React.FC = () => {
               className="lg:w-7 lg:h-5 cursor-pointer"
             />
           </NavLink>
-          <img
-            src="https://furniro-at.s3.amazonaws.com/Icons/shopping-cart.png"
-            alt="Carrinho compras"
-            className="lg:w-8 lg:h-6 cursor-pointer"
-          />
+          <NavLink to="/cart">
+            <img
+              src="https://furniro-at.s3.amazonaws.com/Icons/shopping-cart.png"
+              alt="Carrinho compras"
+              className="lg:w-8 lg:h-6 cursor-pointer"
+            />
+          </NavLink>
         </div>
         <div className="md:hidden flex items-center">
           <button
@@ -122,11 +124,13 @@ const Header: React.FC = () => {
                 className="w-7 h-6"
               />
             </NavLink>
-            <img
-              src="https://furniro-at.s3.amazonaws.com/Icons/shopping-cart.png"
-              alt="Carrinho compras"
-              className="w-auto h-auto"
-            />
+            <NavLink to={"/cart"}>
+              <img
+                src="https://furniro-at.s3.amazonaws.com/Icons/shopping-cart.png"
+                alt="Carrinho compras"
+                className="w-auto h-auto"
+              />
+            </NavLink>
           </li>
         </ul>
       </div>

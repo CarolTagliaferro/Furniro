@@ -11,11 +11,10 @@ function Router() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/shop" element={<Shop />} />
-
-      <Route path="contact" element={<Contact />} />
-      <Route path="cart" element={<Cart />} />
+      <Route path="/contact" element={<Contact />} />
       <Route path="/login" element={<Login />} />
       <Route path="/errorPage" element={<ErrorPage />} />
+      <Route path="/cart" element={<Cart />} />
     </Routes>
   );
 }

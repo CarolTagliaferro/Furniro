@@ -1,4 +1,6 @@
-[
+
+{"products":
+  [
     {
       "id": 1,
       "name": "Slytherine",
@@ -64,4 +66,4 @@
         "image": "https://furniro-at.s3.amazonaws.com/Products/Images+(5).png"
       }
   ]
-  
+}
