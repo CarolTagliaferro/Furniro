@@ -1,4 +1,3 @@
-// store/reducers/cartReducer.ts
 import { ADD_TO_CART, REMOVE_FROM_CART, INCREMENT_QUANTITY, DECREMENT_QUANTITY } from "../actionsTypes";
 import { CartAction, CartItem, CartState } from "../types/cartTypes";
 

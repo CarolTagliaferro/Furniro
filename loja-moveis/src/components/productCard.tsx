@@ -30,7 +30,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
 
     setTimeout(() => {
       setShowSuccessMessage(false);
-    }, 2000);
+    }, 1500);
   };
 
   return (

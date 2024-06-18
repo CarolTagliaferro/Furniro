@@ -49,7 +49,7 @@ const Login: React.FC = () => {
         setTimeout(() => setSuccessMessage(null), 4000);
       } else {
         await signInWithEmailAndPassword(auth, email, password);
-        navigate("../../../../loja-moveis/src/pages/Home/home.tsx");
+        navigate("/");
       }
     } catch (error) {
       console.error(error);
@@ -59,7 +59,7 @@ const Login: React.FC = () => {
   const handleGoogleLogin = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
-      navigate("../../../../loja-moveis/src/pages/Home/home.tsx");
+      navigate("/");
     } catch (error) {
       console.error(error);
     }
@@ -68,7 +68,7 @@ const Login: React.FC = () => {
   const handleFacebookLogin = async () => {
     try {
       await signInWithPopup(auth, facebookProvider);
-      navigate("../../../../loja-moveis/src/pages/Home/home.tsx");
+      navigate("/");
     } catch (error) {
       console.error(error);
     }

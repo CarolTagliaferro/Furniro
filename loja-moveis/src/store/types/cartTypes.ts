@@ -1,4 +1,3 @@
-// store/types/cartTypes.ts
 import { Product } from "../../types/product";
 import { ADD_TO_CART, REMOVE_FROM_CART, INCREMENT_QUANTITY, DECREMENT_QUANTITY } from "../actionsTypes";
 
