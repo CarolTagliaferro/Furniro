@@ -6,6 +6,7 @@ import { Classes } from "../utils/tailwindPredefs";
 import { IoShareSocial } from "react-icons/io5";
 import { PiHeartBold } from "react-icons/pi";
 import { RiArrowLeftRightLine } from "react-icons/ri";
+import { formatPrice } from "../utils/formatPrice";
 
 interface Props {
   product: Product;
@@ -67,15 +68,15 @@ const ProductCard: React.FC<Props> = ({ product }) => {
             {product.discount ? (
               <div className="flex items-center gap-6">
                 <span className="text-xl font-semibold text-gray-900">
-                  {product.price}
+                  {formatPrice(product.price)}
                 </span>
                 <span className="text-gray-400 line-through mr-2">
-                  {product.discount}
+                  {formatPrice(product.discount)}
                 </span>
               </div>
             ) : (
               <div className="text-xl font-semibold text-gray-900">
-                {product.price}
+                {formatPrice(product.price)}
               </div>
             )}
           </div>

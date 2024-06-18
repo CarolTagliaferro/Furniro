@@ -1,25 +1,15 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useSelector } from "react-redux";
-import { RootState } from "../store/index";
 import { Classes } from "../utils/tailwindPredefs";
+import OverlayCart from "./overlayCart";
+import MenuBurger from "./menuBurger";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isCartHovered, setIsCartHovered] = useState(false);
-  const cartItems = useSelector((state: RootState) => state.cart.items);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const handleCartMouseEnter = () => {
-    setIsCartHovered(true);
-  };
-
-  const handleCartMouseLeave = () => {
-    setIsCartHovered(false);
   };
 
   return (
@@ -69,42 +59,8 @@ const Header: React.FC = () => {
               className="lg:w-7 lg:h-5 cursor-pointer"
             />
           </NavLink>
-          <div
-            className="relative"
-            onMouseEnter={handleCartMouseEnter}
-            onMouseLeave={handleCartMouseLeave}
-          >
-            <NavLink to="/cart">
-              <img
-                src="https://furniro-at.s3.amazonaws.com/Icons/shopping-cart.png"
-                alt="Carrinho compras"
-                className="lg:w-8 lg:h-6 cursor-pointer"
-              />
-            </NavLink>
-            {isCartHovered && (
-              <div className="absolute right-0 mt-2 w-64 bg-white shadow-lg p-4">
-                {cartItems.length > 0 ? (
-                  <ul>
-                    {cartItems.map((item) => (
-                      <li key={item.id} className="flex items-center mb-2">
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          className="w-12 h-12 object-cover mr-4"
-                        />
-                        <div className="flex flex-col">
-                          <span>{item.name}</span>
-                          <span>{item.quantity}x</span>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p>Your cart is empty</p>
-                )}
-              </div>
-            )}
-          </div>
+          {/* Overlay cart */}
+          <OverlayCart />
         </div>
         <div className="md:hidden flex items-center">
           <button
@@ -120,61 +76,7 @@ const Header: React.FC = () => {
         </div>
       </nav>
       {/* Menu burger */}
-      <div
-        className={`fixed top-0 right-0 h-2/5 w-2/4 bg-mediumBg shadow-md z-50 rounded-md transform transition-transform duration-300 ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <button onClick={toggleMenu} className="p-5">
-          <FaTimes className="text-2xl text-font" />
-        </button>
-        <ul className="flex flex-col space-y-4 p-4 text-center">
-          <li>
-            <NavLink to="/" className={Classes.Links} onClick={toggleMenu}>
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/shop" className={Classes.Links} onClick={toggleMenu}>
-              Shop
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/errorPage"
-              className={Classes.Links}
-              onClick={toggleMenu}
-            >
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/contact"
-              className={Classes.Links}
-              onClick={toggleMenu}
-            >
-              Contact
-            </NavLink>
-          </li>
-          <li className="flex gap-2 justify-center">
-            <NavLink to="/login">
-              <img
-                src="https://furniro-at.s3.amazonaws.com/Icons/login.png"
-                alt="Icone login"
-                className="w-7 h-6"
-              />
-            </NavLink>
-            <NavLink to="/cart">
-              <img
-                src="https://furniro-at.s3.amazonaws.com/Icons/shopping-cart.png"
-                alt="Carrinho compras"
-                className="w-auto h-auto"
-              />
-            </NavLink>
-          </li>
-        </ul>
-      </div>
+      <MenuBurger isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
     </header>
   );
 };

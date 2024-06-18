@@ -32,6 +32,9 @@ export const Classes = {
   lsH1: "text-xl font-semibold tracking-wide",
   lsP: "text-grayThree font-medium  pt-1",
 
+  //Cart
+  incDecButton: "px-2 hover:text-primary text-lg",
+
   //Login
   labelLogin: "block font-medium text-font mt-3",
   inputLogin:

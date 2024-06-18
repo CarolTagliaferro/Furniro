@@ -8,6 +8,9 @@ import {
 } from "../../store/actions";
 import Banner from "../../components/banner";
 import Qualities from "../../components/qualities";
+import { formatPrice } from "../../utils/formatPrice";
+import { NavLink } from "react-router-dom";
+import { Classes } from "../../utils/tailwindPredefs";
 
 const Cart: React.FC = () => {
   const items = useSelector((state: RootState) => state.cart.items);
@@ -25,57 +28,107 @@ const Cart: React.FC = () => {
     dispatch(removeFromCart(id));
   };
 
+  const calculateSubtotal = () => {
+    return items.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
+
+  const calculateTotal = () => {
+    const subtotal = calculateSubtotal();
+    return subtotal;
+  };
+
   return (
     <div>
       <Banner name="Cart" />
-      <Qualities />
-      <div className="container mx-auto mt-10">
-        <h2 className="text-2xl font-semibold mb-6">Cart Items</h2>
-        {items.length === 0 ? (
-          <p>Your cart is empty.</p>
-        ) : (
-          <div className="grid grid-cols-1 gap-6">
-            {items.map((item) => (
+
+      <div className="font-poppins container mx-auto mt-10 mb-10 flex">
+        <div className="w-2/3">
+          <div className="bg-mediumBg flex justify-between font-medium text-lg p-4">
+            <h1 className="w-1/4 ml-24">Product</h1>
+            <h1 className="w-1/4 ">Price</h1>
+            <h1 className="w-1/4 ">Quantity</h1>
+            <h1 className="w-1/4 ">Subtotal</h1>
+          </div>
+
+          {items.length === 0 ? (
+            <p className="text-center pt-20 font-poppins font-medium text-2xl">
+              Your cart is empty
+            </p>
+          ) : (
+            items.map((item) => (
               <div
                 key={item.id}
-                className="border p-4 flex justify-between items-center"
+                className="bg-white p-4 flex justify-between items-center"
               >
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-20 h-20 object-cover"
-                />
-                <div className="flex-1 ml-4">
-                  <h3 className="text-lg font-semibold">{item.name}</h3>
-                  <p>{item.description}</p>
-                  <p className="text-gray-500">{item.price}</p>
-                  <div className="flex items-center mt-2">
-                    <button
-                      className="bg-gray-300 p-1"
-                      onClick={() => handleDecrement(item.id)}
-                    >
-                      -
-                    </button>
-                    <span className="mx-2">{item.quantity}</span>
-                    <button
-                      className="bg-gray-300 p-1"
-                      onClick={() => handleIncrement(item.id)}
-                    >
-                      +
-                    </button>
-                  </div>
+                <div className="w-1/4 flex items-center">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-20 h-20 object-cover"
+                  />
+                  <h3 className="text-lg ml-4 text-grayOne">{item.name}</h3>
                 </div>
-                <button
-                  className="bg-red-500 text-white p-2 ml-4"
-                  onClick={() => handleRemove(item.id)}
-                >
-                  Remove
-                </button>
+                <p className="w-1/4 text-center text-grayOne">
+                  {formatPrice(item.price)}
+                </p>
+                <div className="border border-grayOne rounded-lg px-4 py-2 text-center flex justify-center items-center">
+                  <button
+                    className={Classes.incDecButton}
+                    onClick={() => handleDecrement(item.id)}
+                  >
+                    -
+                  </button>
+                  <span className="px-2 text-md">{item.quantity}</span>
+                  <button
+                    className={Classes.incDecButton}
+                    onClick={() => handleIncrement(item.id)}
+                  >
+                    +
+                  </button>
+                </div>
+                <div className="w-1/4 text-center flex justify-between items-center">
+                  <p>{formatPrice(item.price * item.quantity)}</p>
+                  <button
+                    className="ml-4"
+                    onClick={() => handleRemove(item.id)}
+                  >
+                    <img
+                      src="https://furniro-at.s3.amazonaws.com/Icons/trash.png"
+                      alt="Remove"
+                      className="w-6 h-6"
+                    />
+                  </button>
+                </div>
               </div>
-            ))}
+            ))
+          )}
+        </div>
+
+        <div className="w-1/3 pl-10 text-center">
+          <div className="bg-mediumBg px-6 py-8">
+            <h2 className="text-4xl font-semibold mb-20">Cart Totals</h2>
+            <div className="flex justify-evenly mb-6">
+              <span className="font-semibold">Subtotal:</span>
+              <span className="text-grayOne">
+                {formatPrice(calculateSubtotal())}
+              </span>
+            </div>
+            <div className="flex justify-evenly mb-6">
+              <span className="font-semibold">Total:</span>
+              <span className="text-primary text-xl font-medium">
+                {formatPrice(calculateTotal())}
+              </span>
+            </div>
+            <NavLink to={"/checkout"}>
+              <button className="border border-black rounded-xl w-1/2 text-lg py-3 mt-4 mb-16 hover:opacity-75">
+                Check Out
+              </button>
+            </NavLink>
           </div>
-        )}
+        </div>
       </div>
+
+      <Qualities />
     </div>
   );
 };
