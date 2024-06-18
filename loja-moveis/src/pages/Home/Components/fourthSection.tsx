@@ -10,7 +10,7 @@ const FourthSection = () => {
             50+ Beautiful rooms
             <br /> inspiration
           </h1>
-          <p className="font-medium text-xs text-gray-600 mb-3 lg:mb-6">
+          <p className="font-medium text-xs lg:text-base  text-gray-600 mb-3 lg:mb-6">
             Our designer already made a lot of beautiful
             <br />
             prototipe of rooms that inspire you

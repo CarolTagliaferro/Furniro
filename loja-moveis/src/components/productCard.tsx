@@ -17,13 +17,15 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   };
 
   return (
-    <div>
+    <div
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <div
-        className={`bg-lightBg w-80 font-poppins relative ${
-          isHovered ? "brightness-50 transition-all" : ""
+        className={`bg-lightBg font-poppins relative transition-all${
+          isHovered ? "brightness-50" : ""
         }`}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
       >
         <img
           className="w-80 h-auto object-cover"
@@ -38,29 +40,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
         {product.new && (
           <div className={`${Classes.labelProduct} bg-greenAccents`}>New</div>
         )}
-        {isHovered && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center brightness-100">
-            <div>
-              <button className="bg-white text-primary font-semibold px-14 py-3">
-                Add to Cart
-              </button>
-            </div>
-            <div className="flex gap-5 pt-5">
-              <div className={Classes.textIconProduct}>
-                <IoShareSocial className="w-5 h-5" />
-                <p>Share</p>
-              </div>
-              <div className={Classes.textIconProduct}>
-                <RiArrowLeftRightLine className="w-5 h-5" />
-                <p>Compare</p>
-              </div>
-              <div className={Classes.textIconProduct}>
-                <PiHeartBold className="w-5 h-5" />
-                <p>Like</p>
-              </div>
-            </div>
-          </div>
-        )}
+
         <div className="mt-4 px-3 pb-5">
           <h2 className="text-2xl font-semibold text-gray-900">
             {product.name}
@@ -84,6 +64,29 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
           </div>
         </div>
       </div>
+      {isHovered && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 transition-all duration-300">
+          <div>
+            <button className="bg-white text-primary font-semibold px-14 py-3">
+              Add to Cart
+            </button>
+          </div>
+          <div className="flex gap-5 pt-5">
+            <div className={Classes.textIconProduct}>
+              <IoShareSocial className="w-5 h-5" />
+              <p>Share</p>
+            </div>
+            <div className={Classes.textIconProduct}>
+              <RiArrowLeftRightLine className="w-5 h-5" />
+              <p>Compare</p>
+            </div>
+            <div className={Classes.textIconProduct}>
+              <PiHeartBold className="w-5 h-5" />
+              <p>Like</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
