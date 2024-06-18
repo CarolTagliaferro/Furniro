@@ -1,12 +1,20 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Product } from "../types/product";
+import { addToCart } from "../store/actions";
 import { Classes } from "../utils/tailwindPredefs";
 import { IoShareSocial } from "react-icons/io5";
 import { PiHeartBold } from "react-icons/pi";
 import { RiArrowLeftRightLine } from "react-icons/ri";
 
-const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
+interface Props {
+  product: Product;
+}
+
+const ProductCard: React.FC<Props> = ({ product }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const dispatch = useDispatch();
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -14,6 +22,15 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
 
   const handleMouseLeave = () => {
     setIsHovered(false);
+  };
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+    setShowSuccessMessage(true);
+
+    setTimeout(() => {
+      setShowSuccessMessage(false);
+    }, 2000);
   };
 
   return (
@@ -24,7 +41,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
     >
       <div
         className={`bg-lightBg font-poppins relative transition-all${
-          isHovered ? "brightness-50" : ""
+          isHovered ? " brightness-50" : ""
         }`}
       >
         <img
@@ -67,7 +84,10 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
       {isHovered && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 transition-all duration-300">
           <div>
-            <button className="bg-white text-primary font-semibold px-14 py-3">
+            <button
+              className="bg-white text-primary font-semibold px-14 py-3"
+              onClick={handleAddToCart}
+            >
               Add to Cart
             </button>
           </div>
@@ -87,6 +107,13 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
           </div>
         </div>
       )}
+      <div>
+        {showSuccessMessage && (
+          <p className="bg-green-700 opacity-80 text-white font-semibold px-4 py-2 rounded-md absolute top-0 mt-4 ml-16">
+            Product added to cart!
+          </p>
+        )}
+      </div>
     </div>
   );
 };

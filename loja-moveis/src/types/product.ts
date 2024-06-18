@@ -1,10 +1,17 @@
+// types/product.ts
+
 export interface Product {
-    id: number
-    name: string
-    price: string
-    discount?: string
-    new?:boolean
-    percentage: string
-    description: string
-    image: string
-}
+    id: number;
+    name: string;
+    price: string;
+    discount?: string;
+    percentage?: string;
+    description: string;
+    image: string;
+    new?: boolean;
+  }
+  
+  export interface CartItem extends Product {
+    quantity: number;
+  }
+  

@@ -1,22 +1,14 @@
-import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
-import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-import rootReducer from './reducers'; 
-const persistConfig = {
-  key: 'root',
-  storage,
-  whitelist: ['counter'], 
-};
+// store/index.ts
+import { createStore, combineReducers } from "redux";
+import cartReducer from "./reducers/cartReducer";
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const rootReducer = combineReducers({
+  cart: cartReducer,
+  // outros reducers se houver
+});
 
-const store = createStore(
-  persistedReducer,
-  composeWithDevTools(applyMiddleware(thunk))
-);
+export type RootState = ReturnType<typeof rootReducer>;
 
-const persistor = persistStore(store);
+const store = createStore(rootReducer);
 
-export { store, persistor };
+export default store;
