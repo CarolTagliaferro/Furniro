@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Product } from "../types/product";
+import { Product } from "../store/product";
 
 const useFetchApi = (url: string) => {
   const [products, setProducts] = useState<Product[]>([]);

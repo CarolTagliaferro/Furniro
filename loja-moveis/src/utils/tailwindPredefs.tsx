@@ -32,6 +32,11 @@ export const Classes = {
   lsH1: "text-xl font-semibold tracking-wide",
   lsP: "text-grayThree font-medium  pt-1",
 
+  //Checkout
+  TextFormCheck: "lg:py-3 font-medium text-sm",
+  InputFormCheck: "border border-grayOne outline-none rounded-lg py-4",
+  FormCheckPosition: "flex flex-col py-4",
+
   //Cart
   incDecButton: "px-2 hover:text-primary text-lg",
 

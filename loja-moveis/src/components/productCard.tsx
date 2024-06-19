@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Product } from "../types/product";
+import { Product } from "../store/product";
 import { addToCart } from "../store/actions";
 import { Classes } from "../utils/tailwindPredefs";
 import { IoShareSocial } from "react-icons/io5";

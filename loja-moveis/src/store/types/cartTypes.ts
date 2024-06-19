@@ -1,4 +1,4 @@
-import { Product } from "../../types/product";
+import { Product } from "../product";
 import { ADD_TO_CART, REMOVE_FROM_CART, INCREMENT_QUANTITY, DECREMENT_QUANTITY } from "../actionsTypes";
 
 export interface CartItem extends Product {
