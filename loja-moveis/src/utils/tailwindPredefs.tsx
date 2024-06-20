@@ -41,8 +41,11 @@ export const Classes = {
 
   //Checkout
   TextFormCheck: "lg:py-3 font-medium text-sm",
-  InputFormCheck: "border border-grayOne outline-none rounded-lg py-4",
+  InputFormCheck: "border border-grayOne outline-none rounded-lg py-4 w-full",
   FormCheckPosition: "flex flex-col py-4",
+
+  //Produto Unico
+  bannerText: "text-grayOne hover:underline hover:text-grayTwo",
 
   //Cart
   incDecButton: "px-2 hover:text-primary text-lg",

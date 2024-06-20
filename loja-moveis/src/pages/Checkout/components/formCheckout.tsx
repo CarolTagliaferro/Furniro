@@ -3,14 +3,14 @@ import { Classes } from "../../../utils/tailwindPredefs";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../store";
 import { formatPrice } from "../../../utils/formatPrice";
+import { NavLink } from "react-router-dom";
 
 const FormCheckout = () => {
   const items = useSelector((state: RootState) => state.cart.items);
+
   const calculateSubtotal = () => {
     return items.reduce((total, item) => total + item.price * item.quantity, 0);
   };
-
-  const inputClass = `${Classes.InputFormCheck} w-full`;
 
   return (
     <div className="font-poppins my-20">
@@ -24,13 +24,13 @@ const FormCheckout = () => {
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 First Name
               </label>
-              <input type="text" className={`${inputClass}`} />
+              <input type="text" className={Classes.InputFormCheck} />
             </div>
             <div className="w-full md:w-1/2 px-3">
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 Last Name
               </label>
-              <input type="text" className={`${inputClass}`} />
+              <input type="text" className={Classes.InputFormCheck} />
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -38,7 +38,7 @@ const FormCheckout = () => {
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 Company Name (Optional)
               </label>
-              <input type="text" className={`${inputClass}`} />
+              <input type="text" className={Classes.InputFormCheck} />
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -46,7 +46,7 @@ const FormCheckout = () => {
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 ZIP code
               </label>
-              <input type="number" className={`${inputClass}`} />
+              <input type="number" className={Classes.InputFormCheck} />
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -54,7 +54,7 @@ const FormCheckout = () => {
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 Country / Region
               </label>
-              <input type="text" className={`${inputClass}`} />
+              <input type="text" className={Classes.InputFormCheck} />
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -62,7 +62,7 @@ const FormCheckout = () => {
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 Street address
               </label>
-              <input type="text" className={`${inputClass}`} />
+              <input type="text" className={Classes.InputFormCheck} />
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -70,7 +70,7 @@ const FormCheckout = () => {
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 Town / City
               </label>
-              <input type="text" className={`${inputClass}`} />
+              <input type="text" className={Classes.InputFormCheck} />
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -78,7 +78,7 @@ const FormCheckout = () => {
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 Province
               </label>
-              <input type="text" className={`${inputClass}`} />
+              <input type="text" className={Classes.InputFormCheck} />
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -86,7 +86,7 @@ const FormCheckout = () => {
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 Add-on
               </label>
-              <input type="text" className={`${inputClass}`} />
+              <input type="text" className={Classes.InputFormCheck} />
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -94,7 +94,7 @@ const FormCheckout = () => {
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 Email
               </label>
-              <input type="text" className={`${inputClass}`} />
+              <input type="email" className={Classes.InputFormCheck} />
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -102,7 +102,7 @@ const FormCheckout = () => {
               <input
                 type="text"
                 placeholder="Additional information"
-                className={`${inputClass} pl-5 text-sm`}
+                className={`${Classes.InputFormCheck} pl-5 text-sm`}
               />
             </div>
           </div>
@@ -110,7 +110,7 @@ const FormCheckout = () => {
         <div className="w-1/3">
           <div className="px-6 grid grid-cols-2">
             <h2 className="text-2xl font-semibold mb-6">Product</h2>
-            <h2 className="text-2xl font-semibold mb-6 text-right">Subtotal</h2>
+            <h2 className="text-2xl font-semibold mb-6 text-right">Price</h2>
           </div>
           <div className="px-6 grid grid-cols-2">
             <div>
@@ -124,7 +124,9 @@ const FormCheckout = () => {
               ))}
             </div>
             <div className="text-right">
-              <p className="">{formatPrice(calculateSubtotal())}</p>
+              {items.map((item) => (
+                <p key={item.id}>{formatPrice(item.price * item.quantity)}</p>
+              ))}
             </div>
           </div>
           <div className="px-6 grid grid-cols-2 pt-5">
@@ -133,10 +135,10 @@ const FormCheckout = () => {
             </div>
 
             <div className="text-right">
-              <p className="">{formatPrice(calculateSubtotal())}</p>
+              <p>{formatPrice(calculateSubtotal())}</p>
             </div>
           </div>
-          <div className="px-6 grid grid-cols-2 pt-5  pb-7">
+          <div className="px-6 grid grid-cols-2 pt-5 pb-7">
             <div>
               <span className="font-medium">Total</span>
             </div>
@@ -161,7 +163,7 @@ const FormCheckout = () => {
               </div>
               <div className="flex text-grayOne pb-3">
                 <input type="radio" name="paymentMethod" />
-                <span className="pl-2 font-medium">Direct Bank Transfer</span>
+                <span className="pl-2 font-medium">Credit Card</span>
               </div>
               <div className="flex text-grayOne">
                 <input type="radio" name="paymentMethod" />
@@ -171,8 +173,12 @@ const FormCheckout = () => {
                 <p className="font-light">
                   Your personal data will be used to support your experience
                   throughout this website, to manage access to your account, and
-                  for other purposes described in our{" "}
-                  <span className="font-semibold">privacy policy.</span>
+                  for other purposes described in our
+                  <NavLink to={"/errorPage"}>
+                    <button className="font-semibold hover:underline  pl-1">
+                      privacy policy.
+                    </button>
+                  </NavLink>
                 </p>
               </div>
             </div>

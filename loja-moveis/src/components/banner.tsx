@@ -22,7 +22,7 @@ const Banner: React.FC<NameProps> = ({ name }) => {
         />
         <h1 className="font-medium text-5xl pb-3">{name}</h1>
         <p>
-          <NavLink className="font-bold hover:underline" to={"/"}>
+          <NavLink className="font-bold hover:underline pr-1" to={"/"}>
             Home
           </NavLink>
           &gt; {name}
