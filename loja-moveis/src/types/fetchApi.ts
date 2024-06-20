@@ -7,7 +7,7 @@ const useFetchApi = (url: string) => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchApi = async () => {
+    const fetchData = async () => {
       try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -23,7 +23,7 @@ const useFetchApi = (url: string) => {
       }
     };
 
-    fetchApi();
+    fetchData();
   }, [url]);
 
   return { products, loading, error };

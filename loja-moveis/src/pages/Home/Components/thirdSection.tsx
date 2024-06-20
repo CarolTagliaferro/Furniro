@@ -11,13 +11,15 @@ const ThirdSection: React.FC = () => {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
 
+  const justShow = products.slice(0, 8);
+
   return (
     <div className="my-10 lg:my-20 lg:mx-36">
       <h1 className="font-poppins text-4xl text-center font-bold text-textCard mb-10">
         Our Products
       </h1>
       <div className="grid grid-cols-1 gap-y-10 gap-x-8 lg:grid-cols-4 lg:gap-8 lg:px-0 place-items-center">
-        {products.map((product) => (
+        {justShow.map((product) => (
           <div key={product.id}>
             <ProductCard product={product} />
           </div>
