@@ -118,16 +118,65 @@ const FormCheckout = () => {
                 <p key={item.id}>
                   <span className="text-grayOne">{item.name}</span>
                   <span className="text-black px-2 text-sm">
-                    {" "}
                     x {item.quantity}
                   </span>
                 </p>
               ))}
             </div>
             <div className="text-right">
-              <p className="text-lg">{formatPrice(calculateSubtotal())}</p>
+              <p className="">{formatPrice(calculateSubtotal())}</p>
             </div>
           </div>
+          <div className="px-6 grid grid-cols-2 pt-5">
+            <div>
+              <span className="font-medium">Subtotal</span>
+            </div>
+
+            <div className="text-right">
+              <p className="">{formatPrice(calculateSubtotal())}</p>
+            </div>
+          </div>
+          <div className="px-6 grid grid-cols-2 pt-5  pb-7">
+            <div>
+              <span className="font-medium">Total</span>
+            </div>
+
+            <div className="text-right">
+              <p className="text-2xl text-primary font-bold">
+                {formatPrice(calculateSubtotal())}
+              </p>
+            </div>
+          </div>
+          <hr />
+          <form className="pt-10 px-6">
+            <div>
+              <div>
+                <input type="radio" name="paymentMethod" />
+                <span className="pl-2 font-medium">Direct Bank Transfer</span>
+                <p className="text-grayOne font-light py-3">
+                  Make your payment directly into our bank account. Please use
+                  your Order ID as the payment reference. Your order will not be
+                  shipped until the funds have cleared in our account.
+                </p>
+              </div>
+              <div className="flex text-grayOne pb-3">
+                <input type="radio" name="paymentMethod" />
+                <span className="pl-2 font-medium">Direct Bank Transfer</span>
+              </div>
+              <div className="flex text-grayOne">
+                <input type="radio" name="paymentMethod" />
+                <span className="pl-2 font-medium">Cash on Delivery</span>
+              </div>
+              <div className="pt-6">
+                <p className="font-light">
+                  Your personal data will be used to support your experience
+                  throughout this website, to manage access to your account, and
+                  for other purposes described in our{" "}
+                  <span className="font-semibold">privacy policy.</span>
+                </p>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
