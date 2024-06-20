@@ -28,7 +28,7 @@ export const Classes = {
     "text-xs pt-2 border border-grayOne outline-none rounded-lg px-5 py-2",
   formLabel: "text-sm font-medium pb-4",
 
-  //
+  //Qualities
   lsH1: "text-xl font-semibold tracking-wide",
   lsP: "text-grayThree font-medium  pt-1",
 
@@ -39,6 +39,13 @@ export const Classes = {
 
   //Cart
   incDecButton: "px-2 hover:text-primary text-lg",
+
+  //Carrrossel
+  carrouselTag:
+    "absolute w-48 left-5 top-3/4 transform -translate-y-1/2 text-center py-5 bg-white bg-opacity-80",
+  nameTag: "text-sm text-grayTwo",
+  descriptionTag: "text-2xl font-semibold text-font",
+  arrowButton: "absolute top-3/4 right-48 transform bg-primary w-10 h-10 p-2",
 
   //Login
   labelLogin: "block font-medium text-font mt-3",
