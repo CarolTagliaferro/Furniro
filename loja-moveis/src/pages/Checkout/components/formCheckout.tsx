@@ -181,6 +181,11 @@ const FormCheckout = () => {
                   </NavLink>
                 </p>
               </div>
+              <div className="pt-7 ml-36">
+                <button className="border border-black rounded-lg px-20 py-3 hover:border-primaryDark hover:text-primaryDark">
+                  Place order
+                </button>
+              </div>
             </div>
           </form>
         </div>
