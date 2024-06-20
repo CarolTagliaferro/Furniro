@@ -21,10 +21,11 @@ export const Classes = {
 
   //Carrrossel
   carrouselTag:
-    "absolute w-48 left-5 top-3/4 transform -translate-y-1/2 text-center py-5 bg-white bg-opacity-80",
-  nameTag: "text-sm text-grayTwo",
-  descriptionTag: "text-2xl font-semibold text-font",
-  arrowButton: "absolute top-3/4 right-48 transform bg-primary w-10 h-10 p-2",
+    "absolute w-48 left-5 top-3/4 transform -translate-y-1/2 text-center py-5 bg-white bg-opacity-80 hidden md:block",
+  nameTag: "text-sm text-grayTwo hidden md:block",
+  descriptionTag: "text-2xl font-semibold text-font hidden md:block",
+  arrowButton:
+    "absolute top-3/4 right-48 transform bg-primary w-10 h-10 p-2 hidden md:block",
 
   //Contact
   textFormH2: "text-xl font-medium",

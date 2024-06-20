@@ -37,7 +37,7 @@ const Carrousel = () => {
           </div>
           <NavLink to={"/errorPage"}>
             <button className={Classes.arrowButton}>
-              <GoArrowRight className="text-white w-6 h-6" />
+              <GoArrowRight className="text-white w-6 h-6 hidden md:block" />
             </button>
           </NavLink>
         </div>
@@ -54,7 +54,7 @@ const Carrousel = () => {
           </div>
           <NavLink to={"/errorPage"}>
             <button className={Classes.arrowButton}>
-              <GoArrowRight className="text-white w-6 h-6" />
+              <GoArrowRight className="text-white w-6 h-6 hidden md:block" />
             </button>
           </NavLink>
         </div>
@@ -71,7 +71,7 @@ const Carrousel = () => {
           </div>
           <NavLink to={"/errorPage"}>
             <button className={Classes.arrowButton}>
-              <GoArrowRight className="text-white w-6 h-6" />
+              <GoArrowRight className="text-white w-6 h-6 hidden md:block" />
             </button>
           </NavLink>
         </div>
