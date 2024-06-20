@@ -30,6 +30,7 @@ type FormValues = z.infer<typeof schema>;
 const Login: React.FC = () => {
   const [isRegistering, setIsRegistering] = useState(false);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const navigate = useNavigate();
   const {
     register,
@@ -42,6 +43,7 @@ const Login: React.FC = () => {
 
   const handleEmailLogin: SubmitHandler<FormValues> = async (data) => {
     const { email, password } = data;
+    setErrorMessage(null);
     try {
       if (isRegistering) {
         await createUserWithEmailAndPassword(auth, email, password);
@@ -51,8 +53,19 @@ const Login: React.FC = () => {
         await signInWithEmailAndPassword(auth, email, password);
         navigate("/");
       }
-    } catch (error) {
-      console.error(error);
+    } catch (error: any) {
+      console.error("Error during login/registration:", error);
+      console.error("Error message:", error.message);
+
+      if (isRegistering) {
+        if (error.code === "auth/email-already-in-use") {
+          setErrorMessage("Email is already in use");
+        } else {
+          setErrorMessage("Registration failed. Please try again.");
+        }
+      } else {
+        setErrorMessage("Email or password is incorrect.");
+      }
     }
   };
 
@@ -61,7 +74,7 @@ const Login: React.FC = () => {
       await signInWithPopup(auth, googleProvider);
       navigate("/");
     } catch (error) {
-      console.error(error);
+      console.error("Google login error:", error);
     }
   };
 
@@ -70,15 +83,16 @@ const Login: React.FC = () => {
       await signInWithPopup(auth, facebookProvider);
       navigate("/");
     } catch (error) {
-      console.error(error);
+      console.error("Facebook login error:", error);
     }
   };
 
   const toggleFormMode = () => {
-    setIsRegistering(!isRegistering); //Pra definir se esta na pagina de login ou registro
-    reset(); //Pra limpar o campo quando for de registro para login
+    setIsRegistering(!isRegistering);
+    setErrorMessage(null);
+    setSuccessMessage(null);
+    reset();
   };
-
   return (
     <div className="min-h-screen flex items-center justify-center">
       <img
@@ -141,6 +155,11 @@ const Login: React.FC = () => {
         {successMessage && (
           <div className=" text-lg text-center bg-green-100 border border-green-600 text-green-700 px-4 py-3 rounded-md">
             {successMessage}
+          </div>
+        )}
+        {errorMessage && (
+          <div className=" text-lg text-center bg-red-100 border border-red-600 text-red-700 px-4 py-3 rounded-md">
+            {errorMessage}
           </div>
         )}
         <div className="">
