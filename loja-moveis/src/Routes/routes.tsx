@@ -6,6 +6,7 @@ import Cart from "../pages/Cart/cart";
 import Login from "../pages/Login/login";
 import ErrorPage from "../components/errorPage";
 import Checkout from "../pages/Checkout/checkout";
+import SingleProduct from "../pages/SingleProduct/singleProduct";
 
 function Router() {
   return (
@@ -17,6 +18,7 @@ function Router() {
       <Route path="/errorPage" element={<ErrorPage />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
+      <Route path="/singleProduct" element={<SingleProduct />} />
     </Routes>
   );
 }
