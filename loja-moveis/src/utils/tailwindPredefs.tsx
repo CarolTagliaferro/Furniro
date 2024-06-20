@@ -37,8 +37,8 @@ export const Classes = {
   formLabel: "text-sm font-medium pb-4",
 
   //Qualities
-  lsH1: "text-xl font-semibold tracking-wide",
-  lsP: "text-grayThree font-medium  pt-1",
+  lsH1: "lg:text-xl text-sm font-medium lg:font-semibold lg:tracking-wide",
+  lsP: "text-grayThree text-xs lg:text-lg lg:font-medium  pt-1",
 
   //Checkout
   TextFormCheck: "lg:py-3 font-medium text-sm",
