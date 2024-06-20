@@ -2,6 +2,8 @@ import React from "react";
 import useFetchApi from "../../../types/fetchApi";
 import ProductCard from "../../../components/productCard";
 import { NavLink } from "react-router-dom";
+import { Splide, SplideSlide } from "react-splide-ts";
+import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 
 const ThirdSection: React.FC = () => {
   const { products, loading, error } = useFetchApi(
@@ -13,17 +15,52 @@ const ThirdSection: React.FC = () => {
 
   const justShow = products.slice(0, 8);
 
+  // Configurações do Splide
+  const splideOptions = {
+    type: "slide",
+    perPage: 1,
+    perMove: 1,
+    gap: "1rem",
+    pagination: false,
+    breakpoints: {
+      640: {
+        perPage: 1,
+        perMove: 1,
+      },
+      768: {
+        perPage: 2,
+        perMove: 2,
+      },
+      1024: {
+        perPage: 4,
+        perMove: 4,
+      },
+    },
+  };
+
   return (
     <div className="my-10 lg:my-20 lg:mx-36">
       <h1 className="font-poppins text-4xl text-center font-bold text-textCard mb-10">
         Our Products
       </h1>
-      <div className="grid grid-cols-1 gap-y-10 gap-x-8 lg:grid-cols-4 lg:gap-8 lg:px-0 place-items-center">
-        {justShow.map((product) => (
-          <div key={product.id}>
-            <ProductCard product={product} />
-          </div>
-        ))}
+
+      <div className="hidden lg:block">
+        <div className="grid grid-cols-1 gap-y-10 gap-x-8 lg:grid-cols-4 lg:gap-8 lg:px-0 place-items-center">
+          {justShow.map((product) => (
+            <div key={product.id}>
+              <ProductCard product={product} />
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="lg:hidden">
+        <Splide options={splideOptions}>
+          {justShow.map((product) => (
+            <SplideSlide key={product.id}>
+              <ProductCard product={product} />
+            </SplideSlide>
+          ))}
+        </Splide>
       </div>
       <div className="text-center mt-8">
         <NavLink to={"/shop"}>

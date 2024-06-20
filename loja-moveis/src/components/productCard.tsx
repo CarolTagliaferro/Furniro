@@ -86,7 +86,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 transition-all duration-300">
           <div>
             <button
-              className="bg-white text-primary font-semibold px-14 py-3"
+              className="bg-white text-primary font-semibold px-14 py-3 hover:bg-primary hover:text-white transition"
               onClick={handleAddToCart}
             >
               Add to Cart
