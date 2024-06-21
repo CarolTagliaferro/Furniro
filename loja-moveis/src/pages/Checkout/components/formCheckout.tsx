@@ -1,16 +1,75 @@
-import React from "react";
+import { useEffect } from "react";
 import { Classes } from "../../../utils/tailwindPredefs";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../store";
 import { formatPrice } from "../../../utils/formatPrice";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+const checkoutSchema = z.object({
+  firstName: z
+    .string()
+    .min(3, { message: "Name must be at least 3 characters" }),
+  lastName: z
+    .string()
+    .min(3, { message: "Last name must be at least 3 characters" }),
+  companyName: z.string().optional(),
+  zip: z.string().length(8, { message: "ZIP must be 8 characters long" }),
+  country: z.string().min(3, { message: "Country is required" }),
+  street: z.string().min(3, { message: "Street is required" }),
+  city: z.string().min(3, { message: "City must be ate least 3 characters" }),
+  province: z
+    .string()
+    .min(2, { message: "Province must be ate least 2 characters" }),
+  addon: z.string().optional(),
+  email: z.string().email({ message: "Invalid email address" }),
+  addInfo: z.string().optional(),
+});
+
+type checkoutFormData = z.infer<typeof checkoutSchema>;
 
 const FormCheckout = () => {
   const items = useSelector((state: RootState) => state.cart.items);
 
+  const {
+    register,
+    handleSubmit: onSubmitForm,
+    setValue,
+    watch,
+    formState: { errors },
+  } = useForm<checkoutFormData>({
+    resolver: zodResolver(checkoutSchema),
+  });
+
   const calculateSubtotal = () => {
     return items.reduce((total, item) => total + item.price * item.quantity, 0);
   };
+
+  const onSubmit: SubmitHandler<checkoutFormData> = (data) => {
+    console.log(data);
+  };
+
+  const zip = watch("zip");
+
+  useEffect(() => {
+    if (zip?.length === 8) {
+      axios
+        .get(`https://viacep.com.br/ws/${zip}/json/`)
+        .then((response) => {
+          const { logradouro, localidade, uf } = response.data;
+          setValue("street", logradouro);
+          setValue("city", localidade);
+          setValue("province", uf);
+          setValue("country", "Brazil");
+        })
+        .catch((error) => {
+          console.error("Error finding address: ", error);
+        });
+    }
+  }, [zip, setValue]);
 
   return (
     <div className="font-poppins my-20">
@@ -24,13 +83,31 @@ const FormCheckout = () => {
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 First Name
               </label>
-              <input type="text" className={Classes.InputFormCheck} />
+              <input
+                type="text"
+                {...register("firstName")}
+                className={Classes.InputFormCheck}
+              />
+              {errors.firstName && (
+                <p className={Classes.FormCheckoutErrors}>
+                  {errors.firstName.message}
+                </p>
+              )}
             </div>
             <div className="w-full md:w-1/2 px-3">
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 Last Name
               </label>
-              <input type="text" className={Classes.InputFormCheck} />
+              <input
+                type="text"
+                {...register("lastName")}
+                className={Classes.InputFormCheck}
+              />
+              {errors.lastName && (
+                <p className={Classes.FormCheckoutErrors}>
+                  {errors.lastName.message}
+                </p>
+              )}
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -38,7 +115,11 @@ const FormCheckout = () => {
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 Company Name (Optional)
               </label>
-              <input type="text" className={Classes.InputFormCheck} />
+              <input
+                type="text"
+                {...register("companyName")}
+                className={Classes.InputFormCheck}
+              />
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -46,7 +127,16 @@ const FormCheckout = () => {
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 ZIP code
               </label>
-              <input type="number" className={Classes.InputFormCheck} />
+              <input
+                type="number"
+                {...register("zip")}
+                className={Classes.InputFormCheck}
+              />
+              {errors.zip && (
+                <p className={Classes.FormCheckoutErrors}>
+                  {errors.zip.message}
+                </p>
+              )}
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -54,7 +144,16 @@ const FormCheckout = () => {
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 Country / Region
               </label>
-              <input type="text" className={Classes.InputFormCheck} />
+              <input
+                type="text"
+                {...register("country")}
+                className={Classes.InputFormCheck}
+              />
+              {errors.country && (
+                <p className={Classes.FormCheckoutErrors}>
+                  {errors.country.message}
+                </p>
+              )}
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -62,7 +161,16 @@ const FormCheckout = () => {
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 Street address
               </label>
-              <input type="text" className={Classes.InputFormCheck} />
+              <input
+                type="text"
+                {...register("street")}
+                className={Classes.InputFormCheck}
+              />
+              {errors.street && (
+                <p className={Classes.FormCheckoutErrors}>
+                  {errors.street.message}
+                </p>
+              )}
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -70,7 +178,16 @@ const FormCheckout = () => {
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 Town / City
               </label>
-              <input type="text" className={Classes.InputFormCheck} />
+              <input
+                type="text"
+                {...register("city")}
+                className={Classes.InputFormCheck}
+              />
+              {errors.city && (
+                <p className={Classes.FormCheckoutErrors}>
+                  {errors.city.message}
+                </p>
+              )}
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -78,7 +195,16 @@ const FormCheckout = () => {
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 Province
               </label>
-              <input type="text" className={Classes.InputFormCheck} />
+              <input
+                type="text"
+                {...register("province")}
+                className={Classes.InputFormCheck}
+              />
+              {errors.province && (
+                <p className={Classes.FormCheckoutErrors}>
+                  {errors.province.message}
+                </p>
+              )}
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -86,7 +212,11 @@ const FormCheckout = () => {
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 Add-on
               </label>
-              <input type="text" className={Classes.InputFormCheck} />
+              <input
+                type="text"
+                {...register("addon")}
+                className={Classes.InputFormCheck}
+              />
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -94,7 +224,16 @@ const FormCheckout = () => {
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 Email
               </label>
-              <input type="email" className={Classes.InputFormCheck} />
+              <input
+                type="email"
+                {...register("email")}
+                className={Classes.InputFormCheck}
+              />
+              {errors.email && (
+                <p className={Classes.FormCheckoutErrors}>
+                  {errors.email.message}
+                </p>
+              )}
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -102,6 +241,7 @@ const FormCheckout = () => {
               <input
                 type="text"
                 placeholder="Additional information"
+                {...register("addInfo")}
                 className={`${Classes.InputFormCheck} pl-5 text-sm`}
               />
             </div>
@@ -182,7 +322,11 @@ const FormCheckout = () => {
                 </p>
               </div>
               <div className="pt-7 ml-36">
-                <button className="border border-black rounded-lg px-20 py-3 hover:border-primaryDark hover:text-primaryDark">
+                <button
+                  type="button"
+                  onClick={onSubmitForm(onSubmit)}
+                  className="border border-black rounded-lg px-20 py-3 hover:border-primaryDark hover:text-primaryDark"
+                >
                   Place order
                 </button>
               </div>
