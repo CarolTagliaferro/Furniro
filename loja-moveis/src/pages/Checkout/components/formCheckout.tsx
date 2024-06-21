@@ -25,7 +25,7 @@ const checkoutSchema = z.object({
     .string()
     .min(2, { message: "Province must be ate least 2 characters" }),
   addon: z.string().optional(),
-  email: z.string().email({ message: "Invalid email address" }),
+  email: z.string().email("Invalid email address"),
   addInfo: z.string().optional(),
 });
 
@@ -89,9 +89,7 @@ const FormCheckout = () => {
                 className={Classes.InputFormCheck}
               />
               {errors.firstName && (
-                <p className={Classes.FormCheckoutErrors}>
-                  {errors.firstName.message}
-                </p>
+                <p className={Classes.FormErrors}>{errors.firstName.message}</p>
               )}
             </div>
             <div className="w-full md:w-1/2 px-3">
@@ -104,9 +102,7 @@ const FormCheckout = () => {
                 className={Classes.InputFormCheck}
               />
               {errors.lastName && (
-                <p className={Classes.FormCheckoutErrors}>
-                  {errors.lastName.message}
-                </p>
+                <p className={Classes.FormErrors}>{errors.lastName.message}</p>
               )}
             </div>
           </div>
@@ -133,9 +129,7 @@ const FormCheckout = () => {
                 className={Classes.InputFormCheck}
               />
               {errors.zip && (
-                <p className={Classes.FormCheckoutErrors}>
-                  {errors.zip.message}
-                </p>
+                <p className={Classes.FormErrors}>{errors.zip.message}</p>
               )}
             </div>
           </div>
@@ -150,9 +144,7 @@ const FormCheckout = () => {
                 className={Classes.InputFormCheck}
               />
               {errors.country && (
-                <p className={Classes.FormCheckoutErrors}>
-                  {errors.country.message}
-                </p>
+                <p className={Classes.FormErrors}>{errors.country.message}</p>
               )}
             </div>
           </div>
@@ -167,9 +159,7 @@ const FormCheckout = () => {
                 className={Classes.InputFormCheck}
               />
               {errors.street && (
-                <p className={Classes.FormCheckoutErrors}>
-                  {errors.street.message}
-                </p>
+                <p className={Classes.FormErrors}>{errors.street.message}</p>
               )}
             </div>
           </div>
@@ -184,9 +174,7 @@ const FormCheckout = () => {
                 className={Classes.InputFormCheck}
               />
               {errors.city && (
-                <p className={Classes.FormCheckoutErrors}>
-                  {errors.city.message}
-                </p>
+                <p className={Classes.FormErrors}>{errors.city.message}</p>
               )}
             </div>
           </div>
@@ -201,9 +189,7 @@ const FormCheckout = () => {
                 className={Classes.InputFormCheck}
               />
               {errors.province && (
-                <p className={Classes.FormCheckoutErrors}>
-                  {errors.province.message}
-                </p>
+                <p className={Classes.FormErrors}>{errors.province.message}</p>
               )}
             </div>
           </div>
@@ -230,9 +216,7 @@ const FormCheckout = () => {
                 className={Classes.InputFormCheck}
               />
               {errors.email && (
-                <p className={Classes.FormCheckoutErrors}>
-                  {errors.email.message}
-                </p>
+                <p className={Classes.FormErrors}>{errors.email.message}</p>
               )}
             </div>
           </div>

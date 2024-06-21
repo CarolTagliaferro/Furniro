@@ -2,8 +2,34 @@ import { BsClockFill } from "react-icons/bs";
 import { FaPhoneAlt } from "react-icons/fa";
 import { TiLocation } from "react-icons/ti";
 import { Classes } from "../../../utils/tailwindPredefs";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+const contactSchema = z.object({
+  name: z.string().min(3, { message: "Name must have at least 3 characters" }),
+  email: z.string().email("Invalid email address"),
+  subject: z.string().optional(),
+  message: z
+    .string()
+    .min(10, { message: "Message must have at least 10 characters" }),
+});
+
+type contactFormData = z.infer<typeof contactSchema>;
 
 const Form = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<contactFormData>({
+    resolver: zodResolver(contactSchema),
+  });
+
+  const onSubmit: SubmitHandler<contactFormData> = (data) => {
+    console.log(data);
+  };
+
   return (
     <div className="pb-16">
       <div className="text-center lg:pb-24 lg:pt-24 font-poppins ">
@@ -61,7 +87,11 @@ const Form = () => {
                 className={`${Classes.formInputs}  w-96 h-14`}
                 type="text"
                 placeholder="Abc"
+                {...register("name")}
               />
+              {errors.name && (
+                <p className={Classes.FormErrors}>{errors.name.message}</p>
+              )}
             </div>
             <div className={Classes.formContactPosition}>
               <label className={`${Classes.formLabel} pt-7`}>
@@ -71,26 +101,41 @@ const Form = () => {
                 className={`${Classes.formInputs} w-96 h-14`}
                 type="email"
                 placeholder="Abc@def.com"
+                {...register("email")}
               />
+              {errors.email && (
+                <p className={Classes.FormErrors}>{errors.email.message}</p>
+              )}
             </div>
             <div className={Classes.formContactPosition}>
               <label className={`${Classes.formLabel} pt-7`}>Subject</label>
               <input
                 className={`${Classes.formInputs}  w-96 h-14`}
                 type="text"
-                placeholder="This is an optional"
+                placeholder="This is optional"
+                {...register("subject")}
               />
+              {errors.subject && (
+                <p className={Classes.FormErrors}>{errors.subject.message}</p>
+              )}
             </div>
             <div className={Classes.formContactPosition}>
               <label className={`${Classes.formLabel} pt-7`}>Message</label>
               <input
                 className={`${Classes.formInputs} pt-3 pb-16 w-96 h-28`}
                 type="text"
-                placeholder="Hi! i'd like to ask about"
+                placeholder="Hi! I'd like to ask about"
+                {...register("message")}
               />
+              {errors.message && (
+                <p className={Classes.FormErrors}>{errors.message.message}</p>
+              )}
             </div>
             <div className="pt-10">
-              <button className="bg-primary hover:bg-primaryDark text-white text-sm rounded px-10 py-3 lg:px-20 ">
+              <button
+                className="bg-primary hover:bg-primaryDark text-white text-sm rounded px-10 py-3 lg:px-20"
+                onClick={handleSubmit(onSubmit)}
+              >
                 Submit
               </button>
             </div>
