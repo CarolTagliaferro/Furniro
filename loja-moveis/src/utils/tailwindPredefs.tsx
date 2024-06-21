@@ -44,6 +44,7 @@ export const Classes = {
   TextFormCheck: "lg:py-3 font-medium text-sm",
   InputFormCheck: "border border-grayOne outline-none rounded-lg py-4 w-full",
   FormCheckPosition: "flex flex-col py-4",
+  FormCheckoutErrors: "text-red-600",
 
   //Produto Unico
   bannerText: "text-grayOne hover:underline hover:text-grayTwo",
