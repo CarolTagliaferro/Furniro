@@ -32,7 +32,7 @@ const Form = () => {
 
   return (
     <div className="pb-16">
-      <div className="text-center lg:pb-24 lg:pt-24 font-poppins ">
+      <div className="text-center lg:pb-24 lg:pt-24 pb-5 pt-5 font-poppins">
         <h1 className="font-bold text-3xl pb-3">Get In Touch With Us</h1>
         <p className="text-grayOne">
           For More Information About Our Product & Services. Please Feel Free To
@@ -40,7 +40,7 @@ const Form = () => {
           Not Hesitate!
         </p>
       </div>
-      <div className="flex justify-center gap-40 font-poppins">
+      <div className="flex flex-col items-center lg:items-start lg:flex-row justify-center gap-10 lg:gap-40 font-poppins">
         <div className="space-y-8">
           <div className={Classes.alignIconText}>
             <div className="mr-7 text-3xl text-black">
@@ -79,12 +79,12 @@ const Form = () => {
             </div>
           </div>
         </div>
-        <div>
-          <form className="">
+        <div className="w-full max-w-md">
+          <form className="mx-2">
             <div className={Classes.formContactPosition}>
               <label className={Classes.formLabel}>Your name</label>
               <input
-                className={`${Classes.formInputs}  w-96 h-14`}
+                className={`${Classes.formInputs} w-full h-14`}
                 type="text"
                 placeholder="Abc"
                 {...register("name")}
@@ -98,7 +98,7 @@ const Form = () => {
                 Email address
               </label>
               <input
-                className={`${Classes.formInputs} w-96 h-14`}
+                className={`${Classes.formInputs} w-full h-14`}
                 type="email"
                 placeholder="Abc@def.com"
                 {...register("email")}
@@ -110,7 +110,7 @@ const Form = () => {
             <div className={Classes.formContactPosition}>
               <label className={`${Classes.formLabel} pt-7`}>Subject</label>
               <input
-                className={`${Classes.formInputs}  w-96 h-14`}
+                className={`${Classes.formInputs} w-full h-14`}
                 type="text"
                 placeholder="This is optional"
                 {...register("subject")}
@@ -122,7 +122,7 @@ const Form = () => {
             <div className={Classes.formContactPosition}>
               <label className={`${Classes.formLabel} pt-7`}>Message</label>
               <input
-                className={`${Classes.formInputs} pt-3 pb-16 w-96 h-28`}
+                className={`${Classes.formInputs} w-full h-28`}
                 type="text"
                 placeholder="Hi! I'd like to ask about"
                 {...register("message")}

@@ -9,7 +9,7 @@ const Banner: React.FC<NameProps> = ({ name }) => {
   return (
     <div className="font-poppins relative">
       <img
-        className="lg:w-full lg:h-auto h-40"
+        className="w-full lg:h-auto h-40"
         src="https://furniro-at.s3.amazonaws.com/Products/backgroundShop.png"
         alt="Banner"
       />
