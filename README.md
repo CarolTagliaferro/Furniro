@@ -3,7 +3,7 @@
 <br>
 
 ## 💡Sobre
-<p align="start">O objetivo do projeto foi recriar um site para uma loja de games tendo como exemplo um design criado no Figma e instruções passadas pela PO. O projeto foi desenvoldido utilizando JavaScript, HTML e CSS, conteudo que foi estudado durante a trilha do PB.</p>
+<p align="start">O objetivo do projeto foi recriar um site para uma loja de movéis utilizando React, Typescript e Tailwind para estilização. As imagens foram todas hospedadas em bucket do S3 na AWS.</p>
 <br>
 
 ## 🔎Como acessar?
