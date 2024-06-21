@@ -25,7 +25,7 @@ export const Classes = {
   nameTag: "text-sm text-grayTwo hidden md:block",
   descriptionTag: "text-2xl font-semibold text-font hidden md:block",
   arrowButton:
-    "absolute top-3/4 right-48 transform bg-primary w-10 h-10 p-2 hidden md:block",
+    "absolute top-3/4 right-20 lg:right-48 transform bg-primary w-10 h-10 p-2 hidden md:block",
 
   //Contact
   textFormH2: "text-xl font-medium",

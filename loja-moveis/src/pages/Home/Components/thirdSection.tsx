@@ -31,9 +31,17 @@ const ThirdSection: React.FC = () => {
         perPage: 2,
         perMove: 2,
       },
-      1024: {
-        perPage: 4,
-        perMove: 4,
+      948: {
+        perPage: 2,
+        perMove: 2,
+      },
+      956: {
+        perPage: 3,
+        perMove: 3,
+      },
+      1020: {
+        perPage: 3,
+        perMove: 3,
       },
     },
   };

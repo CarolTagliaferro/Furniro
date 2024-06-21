@@ -22,7 +22,7 @@ const FirstSection = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
               <br /> elit tellus, luctus nec ullamcorper mattis.
             </p>
-            <NavLink to={"/errorPage"}>
+            <NavLink to={"/shop"}>
               <button className="bg-primary hover:bg-primaryDark text-white text-xs lg:text-sm font-bold px-10 py-3 lg:px-16 lg:py-5">
                 BUY NOW
               </button>

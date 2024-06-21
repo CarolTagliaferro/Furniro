@@ -1,5 +1,6 @@
 import Carrousel from "./carrousel";
 import "../../../App.css";
+import { NavLink } from "react-router-dom";
 
 const FourthSection = () => {
   return (
@@ -15,9 +16,11 @@ const FourthSection = () => {
             <br />
             prototype of rooms that inspire you
           </p>
-          <button className="bg-primary hover:bg-primaryDark text-white lg:text-md text-sm lg:font-medium py-1 lg:py-3 lg:px-8 w-26 lg:w-1/3">
-            Explore More
-          </button>
+          <NavLink to={"/errorPage"}>
+            <button className="bg-primary hover:bg-primaryDark text-white lg:text-md text-sm lg:font-medium py-1 lg:py-3 lg:px-8 w-26 lg:w-1/3">
+              Explore More
+            </button>
+          </NavLink>
         </div>
         <div className="flex-1 relative">
           <Carrousel />

@@ -41,7 +41,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
       onMouseLeave={handleMouseLeave}
     >
       <div
-        className={`bg-lightBg font-poppins relative transition-all${
+        className={`bg-lightBg w-80 font-poppins relative transition-all${
           isHovered ? " brightness-50" : ""
         }`}
       >
