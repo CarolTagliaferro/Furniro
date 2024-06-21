@@ -42,7 +42,8 @@ export const Classes = {
 
   //Checkout
   TextFormCheck: "lg:py-3 font-medium text-sm",
-  InputFormCheck: "border border-grayOne outline-none rounded-lg py-4 w-full",
+  InputFormCheck:
+    "border border-grayOne outline-none rounded-lg py-4 px-4 w-full",
   FormCheckPosition: "flex flex-col py-4",
 
   //erros form

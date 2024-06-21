@@ -1,6 +1,6 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, INCREMENT_QUANTITY, DECREMENT_QUANTITY } from "./actionsTypes";
+import { ADD_TO_CART, REMOVE_FROM_CART, INCREMENT_QUANTITY, DECREMENT_QUANTITY, CHECKOUT_FORM } from "./actionsTypes";
 import { Product } from "./product";
-
+import { CheckoutFormData } from "./types/checkoutFormData";
 
 export const addToCart = (product: Product) => ({
   type: ADD_TO_CART,
@@ -21,3 +21,8 @@ export const decrementQuantity = (id: number) => ({
   type: DECREMENT_QUANTITY,
   payload: { id },
 });
+
+export const checkoutForm = (data: CheckoutFormData) => ({
+  type: CHECKOUT_FORM,
+  payload: data
+})

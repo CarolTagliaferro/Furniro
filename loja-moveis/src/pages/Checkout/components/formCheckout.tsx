@@ -20,10 +20,10 @@ const checkoutSchema = z.object({
   zip: z.string().length(8, { message: "ZIP must be 8 characters long" }),
   country: z.string().min(3, { message: "Country is required" }),
   street: z.string().min(3, { message: "Street is required" }),
-  city: z.string().min(3, { message: "City must be ate least 3 characters" }),
+  city: z.string().min(3, { message: "City must be at least 3 characters" }),
   province: z
     .string()
-    .min(2, { message: "Province must be ate least 2 characters" }),
+    .min(2, { message: "Province must be at least 2 characters" }),
   addon: z.string().optional(),
   email: z.string().email("Invalid email address"),
   addInfo: z.string().optional(),
@@ -73,13 +73,13 @@ const FormCheckout = () => {
 
   return (
     <div className="font-poppins my-20">
-      <h1 className="font-semibold text-3xl mb-10 ml-80 pl-5">
+      <h1 className="font-semibold text-3xl mb-10 text-center">
         Billing details
       </h1>
-      <div className="flex justify-center gap-20">
-        <form className="w-1/2 max-w-lg">
+      <div className="flex flex-col gap-8  md:flex-row md:justify-center">
+        <form className="w-full max-w-lg md:w-1/2 px-3">
           <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div className="w-full md:w-1/2 px-3 mb-6">
               <label className={`${Classes.TextFormCheck} pb-1 block`}>
                 First Name
               </label>
@@ -231,8 +231,8 @@ const FormCheckout = () => {
             </div>
           </div>
         </form>
-        <div className="w-1/3">
-          <div className="px-6 grid grid-cols-2">
+        <div className="w-full max-w-lg md:w-1/2 px-3">
+          <div className="px-6 pt- grid grid-cols-2">
             <h2 className="text-2xl font-semibold mb-6">Product</h2>
             <h2 className="text-2xl font-semibold mb-6 text-right">Price</h2>
           </div>
@@ -305,11 +305,11 @@ const FormCheckout = () => {
                   </NavLink>
                 </p>
               </div>
-              <div className="pt-7 ml-36">
+              <div className="pt-7 mx-auto">
                 <button
                   type="button"
                   onClick={onSubmitForm(onSubmit)}
-                  className="border border-black rounded-lg px-20 py-3 hover:border-primaryDark hover:text-primaryDark"
+                  className="border border-black rounded-lg px-10 py-3 hover:border-primaryDark hover:text-primaryDark"
                 >
                   Place order
                 </button>

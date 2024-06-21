@@ -9,7 +9,7 @@ import { Classes } from "../utils/tailwindPredefs";
 
 const Footer = () => {
   return (
-    <footer className="bg-white px-10 py-5 lg:px-20 lg:py-10 border-t-2 border-grayLight">
+    <footer className="bg-white px-10 py-5 lg:py-10 border-t-2 border-grayLight">
       <div className="flex flex-col lg:grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
           <NavLink to={"/"}>

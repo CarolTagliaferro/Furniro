@@ -15,7 +15,7 @@ const FirstSection = () => {
               New Arrival
             </p>
             <h2 className="text-primary text-4xl lg:text-5xl font-bold pb-4">
-              Discouver Our <br />
+              Discover Our <br />
               New Collection
             </h2>
             <p className="font-poppins text-font text-sm lg:text-base font-medium pb-5 lg:pb-10">
