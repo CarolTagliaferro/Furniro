@@ -1,5 +1,3 @@
-import React from "react";
-
 const FilterBar = () => {
   return (
     <div className="bg-mediumBg h-28 font-poppins flex lg:justify-between items-center">
