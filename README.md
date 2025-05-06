@@ -1,4 +1,4 @@
-# Projeto Furniro - Compass UOL✨
+# Projeto Furniro ✨
 Bem-vindo(a) ao Furniro! Este projeto é um site fictício de uma loja de móveis, criado com foco em performance, visual moderno e boas práticas de desenvolvimento Front-End.
 
 > 💼 Desenvolvido como parte do programa de estágio na *Compass UOL*.
