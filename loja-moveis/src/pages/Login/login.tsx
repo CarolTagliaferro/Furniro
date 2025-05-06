@@ -16,6 +16,7 @@ import { Classes } from "../../utils/tailwindPredefs";
 import { useNavigate } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import BgImage from "../../images/hero-cover.png";
 
 const schema = z.object({
   email: z
@@ -96,7 +97,7 @@ const Login: React.FC = () => {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <img
-        src="https://furniro-at.s3.amazonaws.com/HomeImages/scandinavian-interior-mockup-wall-decal-background+1.png"
+        src={BgImage}
         alt="Background Image"
         className="w-full h-full lg:w-full lg:h-full object-cover absolute inset-0 z-[-1] brightness-50 blur-sm"
       />
