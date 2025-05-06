@@ -16,11 +16,11 @@ O desafio proposto foi a construção de um e-commerce fictício para uma loja d
 ## 🔎Como rodar o projeto localmente?
 Para acessar o projeto você deve seguir alguns passos. Confira:
 
-1° Clone o repositório -> https://github.com/CarolTagliaferro/Furniro.git
-2° Acesse a pasta do projeto: cd loja-moveis;
-3° Instale as dependências: npm install;
-6° Para rodar o servidor dê o comando(em um terminal separado) -> json-server --watch src/services/products.json --port 3001
-7° Para iniciar o projeto no navegador dê o comando npm run dev.
+1. Clone o repositório -> https://github.com/CarolTagliaferro/Furniro.git
+2. Acesse a pasta do projeto: cd loja-moveis;
+3. Instale as dependências: npm install;
+4. Para rodar o servidor dê o comando(em um terminal separado) -> json-server --watch src/services/products.json --port 3001
+5. Para iniciar o projeto no navegador dê o comando npm run dev.
 
 Pronto! Você já pode navegar pelo site 🚀
 
