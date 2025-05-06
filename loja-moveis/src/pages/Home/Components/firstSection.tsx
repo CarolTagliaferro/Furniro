@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
+import Banner from "../../../images/hero-cover.png";
 
 const FirstSection = () => {
   return (
     <div>
       <div className="relative min-h-screen flex items-center justify-center">
         <img
-          src="https://furniro-at.s3.amazonaws.com/HomeImages/scandinavian-interior-mockup-wall-decal-background+1.png"
+          src={Banner}
           alt="Imagem Fundo"
           className="w-full h-full lg:w-full lg:h-full object-cover absolute inset-0 z-[-1]"
         />

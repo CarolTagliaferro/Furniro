@@ -4,7 +4,7 @@ import ProductCard from "../../../components/productCard";
 
 const ProductsShop = () => {
   const { products, loading, error } = useFetchApi(
-    "http://localhost:3000/products"
+    "http://localhost:3001/products"
   );
 
   const [currentPage, setCurrentPage] = useState(1);

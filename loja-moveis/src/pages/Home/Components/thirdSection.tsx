@@ -7,7 +7,7 @@ import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 
 const ThirdSection: React.FC = () => {
   const { products, loading, error } = useFetchApi(
-    "http://localhost:3000/products"
+    "http://localhost:3001/products"
   );
 
   if (loading) return <div>Loading...</div>;

@@ -4,6 +4,8 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { Classes } from "../utils/tailwindPredefs";
 import OverlayCart from "./overlayCart";
 import MenuBurger from "./menuBurger";
+import Logo from "../images/logo.svg";
+import Profile from "../images/profile.svg";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +21,7 @@ const Header: React.FC = () => {
           <div className="flex items-center">
             <img
               className="pl-1 lg:pl-4 w-10 lg:w-auto"
-              src="https://furniro-at.s3.amazonaws.com/Icons/logo.png"
+              src={Logo}
               alt="Logo"
             />
             <h1 className="pl-1 font-bold text-2xl lg:text-3xl font-montserrat">
@@ -54,7 +56,7 @@ const Header: React.FC = () => {
         <div className="hidden md:flex items-center lg:space-x-8 pr-14">
           <NavLink to="/login">
             <img
-              src="https://furniro-at.s3.amazonaws.com/Icons/login.png"
+              src={Profile}
               alt="Icone login"
               className="lg:w-7 lg:h-5 cursor-pointer"
             />

@@ -1,4 +1,8 @@
 import { Classes } from "../utils/tailwindPredefs";
+import Trophy from "../images/trophy.svg";
+import Warranty from "../images/warranty.svg";
+import Shipping from "../images/free-shipping.svg";
+import Support from "../images/support.svg";
 
 const Qualities = () => {
   return (
@@ -6,7 +10,7 @@ const Qualities = () => {
       <div className="flex font-poppins bg-whiteLinen lg:py-20  lg:gap-40 justify-evenly">
         <div className="flex">
           <img
-            src="https://furniro-at.s3.amazonaws.com/Icons/trophy.png"
+            src={Trophy}
             alt="Trophy"
             className="w-10 h-10  lg:w-20 lg:h-20"
           />
@@ -17,8 +21,8 @@ const Qualities = () => {
         </div>
         <div className="flex">
           <img
-            src="https://furniro-at.s3.amazonaws.com/Icons/verify.png"
-            alt="Trophy"
+            src={Warranty}
+            alt="Warranty"
             className="w-10 h-10 lg:w-20 lg:h-20"
           />
           <div className="pl-3">
@@ -28,8 +32,8 @@ const Qualities = () => {
         </div>
         <div className="flex">
           <img
-            src="https://furniro-at.s3.amazonaws.com/Icons/shipping.png"
-            alt="Trophy"
+            src={Shipping}
+            alt="Shipping"
             className="w-10 h-10 lg:w-20 lg:h-20"
           />
           <div className="pl-3">
@@ -39,8 +43,8 @@ const Qualities = () => {
         </div>
         <div className="flex">
           <img
-            src="https://furniro-at.s3.amazonaws.com/Icons/customer-support.png"
-            alt="Trophy"
+            src={Support}
+            alt="Support"
             className="w-10 h-10 lg:w-20 lg:h-20"
           />
           <div className="pl-3">

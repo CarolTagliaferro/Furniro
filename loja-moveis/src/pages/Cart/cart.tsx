@@ -11,6 +11,7 @@ import Qualities from "../../components/qualities";
 import { formatPrice } from "../../utils/formatPrice";
 import { NavLink } from "react-router-dom";
 import { Classes } from "../../utils/tailwindPredefs";
+import Trash from "../../images/trash.png";
 
 const Cart: React.FC = () => {
   const items = useSelector((state: RootState) => state.cart.items);
@@ -92,11 +93,7 @@ const Cart: React.FC = () => {
                     className="ml-4"
                     onClick={() => handleRemove(item.id)}
                   >
-                    <img
-                      src="https://furniro-at.s3.amazonaws.com/Icons/trash.png"
-                      alt="Remove"
-                      className="w-6 h-6"
-                    />
+                    <img src={Trash} alt="Remove" className="w-6 h-6" />
                   </button>
                 </div>
               </div>

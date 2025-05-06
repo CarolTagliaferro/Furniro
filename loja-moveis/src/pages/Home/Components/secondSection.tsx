@@ -1,4 +1,7 @@
 import { Classes } from "../../../utils/tailwindPredefs";
+import Dining from "../../../images/category-1.png";
+import Living from "../../../images/category-2.png";
+import Bedroom from "../../../images/category-3.png";
 
 const SecondSection = () => {
   return (
@@ -14,7 +17,7 @@ const SecondSection = () => {
       <div className="flex flex-row justify-center mx-3 lg:mx-0 gap-3 lg:gap-8">
         <div>
           <img
-            src="https://furniro-at.s3.amazonaws.com/HomeImages/Mask+Group.png"
+            src={Dining}
             alt="Mesa com fundo branco"
             className={Classes.HoverImg}
           />
@@ -22,7 +25,7 @@ const SecondSection = () => {
         </div>
         <div>
           <img
-            src="https://furniro-at.s3.amazonaws.com/HomeImages/Image-living+room.png"
+            src={Living}
             alt="Sofá com decorações"
             className={Classes.HoverImg}
           />
@@ -30,7 +33,7 @@ const SecondSection = () => {
         </div>
         <div>
           <img
-            src="https://furniro-at.s3.amazonaws.com/HomeImages/Mask+Group+(1).png"
+            src={Bedroom}
             alt="Almofada e vaso de plantas"
             className={Classes.HoverImg}
           />

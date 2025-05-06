@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
+import ErrorImage from "../images/bgError.jpg";
 
 const ErrorPage = () => {
   return (
-    <div className=" flex justify-center items-center">
+    <div className="flex justify-center items-center">
       <div className="relative font-poppins">
         <img
-          src="https://furniro-at.s3.amazonaws.com/bgError.jpg"
+          src={ErrorImage}
           alt="Abandoned Sofa"
           className="grayscale brightness-50 lg:w-full lg:h-full h-80 w-auto"
         />

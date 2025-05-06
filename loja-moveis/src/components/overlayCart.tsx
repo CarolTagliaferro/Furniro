@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { RootState } from "../store";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Cart from "../images/cart.svg";
 
 const OverlayCart: React.FC = () => {
   const [isCartHovered, setIsCartHovered] = useState(false);
@@ -23,7 +24,7 @@ const OverlayCart: React.FC = () => {
     >
       <NavLink to="/cart">
         <img
-          src="https://furniro-at.s3.amazonaws.com/Icons/shopping-cart.png"
+          src={Cart}
           alt="Carrinho compras"
           className="lg:w-8 lg:h-6 cursor-pointer"
         />
